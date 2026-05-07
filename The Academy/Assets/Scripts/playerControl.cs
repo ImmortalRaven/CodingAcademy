@@ -37,7 +37,7 @@ public class playerControl : MonoBehaviour, IDamage
 
     }
 
-    0
+    
     public void takeDamage(int amount)
     {
         HP -= amount;
