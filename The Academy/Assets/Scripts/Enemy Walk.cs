@@ -33,6 +33,7 @@ public class walkTowardsPoint : MonoBehaviour
         if (target != null)
         {
             pointDir = target.transform.position - gameObject.transform.position;
+            pointDir.y = 0;
             controller.Move(pointDir.normalized * speed * Time.deltaTime);
         }
     }
