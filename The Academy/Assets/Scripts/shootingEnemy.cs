@@ -6,6 +6,7 @@ public class shootingEnemy : MonoBehaviour
     [SerializeField] Transform shootPosition;
     [SerializeField] float shootRate;
     [SerializeField] Transform gunPivot;
+    [SerializeField] AudioClip shootSound;
 
     float shootTimer;
 
@@ -30,5 +31,6 @@ public class shootingEnemy : MonoBehaviour
     {
         shootTimer = 0;
         Instantiate(bullet, shootPosition.position, gunPivot.rotation);
+        AudioSource.PlayClipAtPoint(shootSound, transform.position);
     }
 }

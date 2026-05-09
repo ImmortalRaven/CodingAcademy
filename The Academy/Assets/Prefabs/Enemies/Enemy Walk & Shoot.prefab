@@ -699,7 +699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5040216324410396325}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::walkTowardsPoint
   controller: {fileID: 432741262368917769}
   target: {fileID: 0}
-  targetName: Esick
+  targetName: Player
   pointDir: {x: 0, y: 0, z: 0}
   speed: 1
   turnSpeed: 8
@@ -756,6 +756,7 @@ MonoBehaviour:
   shootPosition: {fileID: 4925939137928899020}
   shootRate: 0.5
   gunPivot: {fileID: 4925939137928899020}
+  shootSound: {fileID: 8300000, guid: 0b3399510f26a9d4cacbfd547562143b, type: 3}
 --- !u!114 &5143178066190822384
 MonoBehaviour:
   m_ObjectHideFlags: 0

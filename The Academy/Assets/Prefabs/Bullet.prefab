@@ -134,6 +134,8 @@ MonoBehaviour:
   bulletSpeed: 40
   bulletDestroyTime: 5
   hitEffect: {fileID: 0}
+  playerHitSound: {fileID: 8300000, guid: eb840670cedf0864bb6b73c947a66aa0, type: 3}
+  otherHitSound: {fileID: 0}
 --- !u!54 &-6630494945143798517
 Rigidbody:
   m_ObjectHideFlags: 0
