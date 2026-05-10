@@ -26,6 +26,7 @@ public class playerControl : MonoBehaviour, IDamage
     [SerializeField] float shootSpeed;
     [SerializeField] Transform shootDir;
     [SerializeField] GameObject shootProjectile;
+    [SerializeField] AudioClip shootSound;
 
 
     Vector3 moveDirection;
@@ -62,6 +63,10 @@ public class playerControl : MonoBehaviour, IDamage
             Quaternion adjustedRot = shootDir.rotation;
             adjustedRot.y -= 90;
             Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+            if(shootSound != null)
+            {
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+            }
             
         }
 
