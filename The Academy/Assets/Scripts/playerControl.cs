@@ -34,7 +34,8 @@ public class playerControl : MonoBehaviour, IDamage
 
     void shoot()
     {
-
+        shootTimer = 0;
+        
     }
 
     

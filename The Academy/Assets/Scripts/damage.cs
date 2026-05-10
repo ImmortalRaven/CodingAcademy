@@ -11,7 +11,8 @@ public class damage : MonoBehaviour
     [SerializeField] int bulletSpeed;
     [SerializeField] int bulletDestroyTime;
     [SerializeField] ParticleSystem hitEffect;
-
+    [SerializeField] AudioClip playerHitSound;
+    [SerializeField] AudioClip otherHitSound;
     bool isDamaging;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,7 +34,18 @@ public class damage : MonoBehaviour
         IDamage dmg = other.GetComponent<IDamage>();
         if (dmg != null && type != damageType.DOT)
         {
+            if (playerHitSound != null)
+            {
+                AudioSource.PlayClipAtPoint(playerHitSound, transform.position);
+            }
             dmg.takeDamage(damageAmount);
+        }
+        else
+        {
+            if (otherHitSound != null)
+            {
+                AudioSource.PlayClipAtPoint(otherHitSound, transform.position);
+            }
         }
 
         if (type == damageType.bullet)
@@ -42,6 +54,7 @@ public class damage : MonoBehaviour
             {
                 Instantiate(hitEffect, transform.position, Quaternion.identity);
             }
+
             Destroy(gameObject);
         }
     }
