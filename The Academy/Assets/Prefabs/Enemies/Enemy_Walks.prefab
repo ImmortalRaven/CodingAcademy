@@ -390,9 +390,11 @@ GameObject:
   - component: {fileID: 2952350200417982552}
   - component: {fileID: 2926811493459438075}
   - component: {fileID: 1075842517310883276}
+  - component: {fileID: 510976882339010563}
+  - component: {fileID: 1347105191650848890}
   m_Layer: 0
   m_Name: Enemy_Walks
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,11 +442,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::walkTowardsPoint
   controller: {fileID: 2952350200417982552}
   target: {fileID: 0}
-  targetName: Esick
+  targetName: Player
   pointDir: {x: 0, y: 0, z: 0}
   speed: 3
   turnSpeed: 20
-  limb: {fileID: 6801439755554603256}
 --- !u!114 &2923942241257500565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,6 +554,52 @@ CapsuleCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &510976882339010563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225292859856650516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c3fc0dfa4be83489045a1e488ab338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::damage
+  type: 1
+  rb: {fileID: 0}
+  damageAmount: 1
+  damageRate: 0
+  bulletSpeed: 0
+  bulletDestroyTime: 0
+  hitEffect: {fileID: 0}
+  playerHitSound: {fileID: 8300000, guid: eb840670cedf0864bb6b73c947a66aa0, type: 3}
+  otherHitSound: {fileID: 0}
+  ignoredObject: {fileID: 0}
+  tagToIgnore: Enemy
+--- !u!136 &1347105191650848890
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225292859856650516}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4837090546067443189

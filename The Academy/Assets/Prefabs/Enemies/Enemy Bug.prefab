@@ -142,7 +142,6 @@ MonoBehaviour:
   pointDir: {x: 0, y: 0, z: 0}
   speed: 6
   turnSpeed: 1
-  limb: {fileID: 0}
 --- !u!143 &5337648683007187086
 CharacterController:
   m_ObjectHideFlags: 0
@@ -180,10 +179,11 @@ GameObject:
   - component: {fileID: 8289176040678563131}
   - component: {fileID: 4693828687301599080}
   - component: {fileID: 5483489534304985808}
-  - component: {fileID: 7101315128478678618}
+  - component: {fileID: 5987444930038885033}
+  - component: {fileID: 6216869275365744882}
   m_Layer: 0
   m_Name: Enemy Bug
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
     m_Bits: 0
   detectObject: {fileID: 2677695598783052348, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
   currState: 0
---- !u!114 &7101315128478678618
+--- !u!114 &5987444930038885033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,10 +272,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 8918540846372328120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e16eb3ab7cae144bf8a8a2dd96623f, type: 3}
+  m_Script: {fileID: 11500000, guid: b9c3fc0dfa4be83489045a1e488ab338, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyTakeDamage
-  currHealth: 3
+  m_EditorClassIdentifier: Assembly-CSharp::damage
+  type: 1
+  rb: {fileID: 0}
+  damageAmount: 1
+  damageRate: 0
+  bulletSpeed: 0
+  bulletDestroyTime: 0
+  hitEffect: {fileID: 0}
+  playerHitSound: {fileID: 8300000, guid: eb840670cedf0864bb6b73c947a66aa0, type: 3}
+  otherHitSound: {fileID: 0}
+  ignoredObject: {fileID: 0}
+  tagToIgnore: Enemy
+--- !u!136 &6216869275365744882
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8918540846372328120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 2.3
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1001 &4144889135711857208
 PrefabInstance:
   m_ObjectHideFlags: 0

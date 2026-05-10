@@ -182,6 +182,7 @@ MonoBehaviour:
   shootSpeed: 5
   shootDir: {fileID: 3586029772881291010}
   shootProjectile: {fileID: 5218392285457394489, guid: 0c5669a07e995fe428ca9f6043b37c6f, type: 3}
+  shootSound: {fileID: 8300000, guid: 6c934b71582901b4a95ce8b12f735f0c, type: 3}
 --- !u!1 &994261837576895503
 GameObject:
   m_ObjectHideFlags: 0
