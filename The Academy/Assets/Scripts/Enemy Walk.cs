@@ -1,15 +1,25 @@
 using UnityEngine;
 
+//HOW TO USE:
+/*
+ * This script will constantly move towards a specified object, given by targetName. It will continually rotate to face that object and move towards it.
+ * 
+ * target is currently un-used, but will eventually replace targetName for ease of use and safer functionality.
+ * targetName is the name of the object to move towards.
+ * pointDir is the direction to move towards, and should not generally be set manually.
+ * speed is a flat value for how fast to move.
+ * turnSpeed is a flat value for how quickly the enemy should rotate towards the object it is moving towards. 
+ * 
+ */
 public class walkTowardsPoint : MonoBehaviour
 {
 
     [SerializeField] CharacterController controller;
-    [SerializeField] GameObject target;
+    [SerializeField] GameObject target; //This is not currently used.
     [SerializeField] string targetName; //*IMPORTANT* This is the name of the object/class that the walking enemy will move towards!
     [SerializeField] Vector3 pointDir; //Direction to move towards
     [SerializeField] float speed; //Flat speed value
     [SerializeField] int turnSpeed; //How fast the enemy turns visually
-    [SerializeField] Transform limb;
 
     float currAngle;
 
@@ -25,7 +35,6 @@ public class walkTowardsPoint : MonoBehaviour
     {
         Movement(); //Moves towards the direction of the target every frame
         FaceTarget();
-        MoveLimbs();
     }
 
     void Movement()
@@ -44,8 +53,4 @@ public class walkTowardsPoint : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * turnSpeed);
     }
 
-    void MoveLimbs()
-    {
-
-    }
 }

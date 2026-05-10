@@ -13,6 +13,8 @@ public class damage : MonoBehaviour
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] AudioClip playerHitSound;
     [SerializeField] AudioClip otherHitSound;
+    [SerializeField] GameObject ignoredObject;
+    [SerializeField] string tagToIgnore;
     bool isDamaging;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,30 +34,35 @@ public class damage : MonoBehaviour
             return;
         }
         IDamage dmg = other.GetComponent<IDamage>();
-        if (dmg != null && type != damageType.DOT)
+        if (other.gameObject.tag != tagToIgnore)
         {
-            if (playerHitSound != null)
-            {
-                AudioSource.PlayClipAtPoint(playerHitSound, transform.position);
-            }
-            dmg.takeDamage(damageAmount);
-        }
-        else
-        {
-            if (otherHitSound != null)
-            {
-                AudioSource.PlayClipAtPoint(otherHitSound, transform.position);
-            }
-        }
 
-        if (type == damageType.bullet)
-        {
-            if (hitEffect != null)
+
+            if (dmg != null && type != damageType.DOT)
             {
-                Instantiate(hitEffect, transform.position, Quaternion.identity);
+                if (playerHitSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(playerHitSound, transform.position);
+                }
+                dmg.takeDamage(damageAmount);
+            }
+            else
+            {
+                if (otherHitSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(otherHitSound, transform.position);
+                }
             }
 
-            Destroy(gameObject);
+            if (type == damageType.bullet)
+            {
+                if (hitEffect != null)
+                {
+                    Instantiate(hitEffect, transform.position, Quaternion.identity);
+                }
+
+                Destroy(gameObject);
+            }
         }
     }
 

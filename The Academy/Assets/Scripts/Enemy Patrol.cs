@@ -1,5 +1,15 @@
 using UnityEngine;
 
+//HOW TO USE:
+/*
+ * This script will cause an enemy to patrol back and forth, and turn when the run into the object set in detectObject. Right now this functionality is not fully implemented, so it is just
+ * hardcoded to turn when it detects the "Wall" object in front of it.
+ * 
+ * moveSpeed is how fast the enemy will move.
+ * turnSpeed is how quickly the enemy will turn, when it detects that it needs to turn.
+ * seeDist is how far in front of it the object will see with this script.
+ * ignoreLayer can be used to ignore any objects on a specific layer when detecting.
+ */
 public class EnemyPatrol : MonoBehaviour
 {
 

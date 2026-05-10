@@ -1,5 +1,13 @@
 using UnityEngine;
-
+//HOW TO USE:
+/*
+ * This script is what is used for rotating the player to face the mouse. To use it, you need the camera associated with the player and a ground/floor object covering all the area the mouse will be in.
+ * The ground/floor object must be on the same layer as the groundLayer.
+ * This script should be attached to the player BODY, and not the player as a whole, because we do NOT want to rotate the camera, which is part of the player.
+ * 
+ * mainCamera is the main viewing camera, which should be part of the player prefab.
+ * groundLayer is the specified layer that contains the floor/ground object. This should be the Ground layer label.
+ */
 public class playerAimTest : MonoBehaviour
 {
     public Camera mainCamera;
