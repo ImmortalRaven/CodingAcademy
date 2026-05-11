@@ -78,4 +78,17 @@ public class playerControl : MonoBehaviour, IDamage
         HP -= amount;
 
     }
+    public void ModifySpeed(int amount)
+    {
+        Speed += amount;
+    }
+    public void ModifyDamage(int amount)
+    {
+        shootDMG += amount;
+    }
+    public void ModifyFireRate(float amount)
+    {
+        shootRate += amount;
+        if (shootRate < 0.1f) shootRate = 0.1f;
+    }
 }
