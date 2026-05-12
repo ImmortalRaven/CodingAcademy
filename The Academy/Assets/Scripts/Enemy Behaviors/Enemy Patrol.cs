@@ -9,6 +9,7 @@ using UnityEngine;
  * turnSpeed is how quickly the enemy will turn, when it detects that it needs to turn.
  * seeDist is how far in front of it the object will see with this script.
  * ignoreLayer can be used to ignore any objects on a specific layer when detecting.
+ * degreesToTurn is how many degrees the enemy should turn before returning to walking. Good choices are 90 and 180, but it may be customized further.
  */
 public class EnemyPatrol : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] int turnSpeed;
     [SerializeField] float seeDist;
     [SerializeField] LayerMask ignoreLayer;
+    [SerializeField] int degreesToTurn;
 
     [SerializeField] GameObject detectObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,7 +33,8 @@ public class EnemyPatrol : MonoBehaviour
     Vector3 myMovementVec;
     void Start()
     {
-        myMovementVec = new Vector3(0, 0, moveSpeed);
+        //myMovementVec = new Vector3(0, 0, moveSpeed);
+        myMovementVec = transform.forward * moveSpeed;
     }
 
     // Update is called once per frame
@@ -67,20 +70,21 @@ public class EnemyPatrol : MonoBehaviour
 
     void Turning()
     {
-        if (degreesTurned < 180)
+        if (degreesTurned < degreesToTurn)
         {
-            if (degreesTurned + turnSpeed < 180)
+            if (degreesTurned + turnSpeed < degreesToTurn)
             {
                 transform.Rotate(0, turnSpeed, 0);
                 degreesTurned += turnSpeed;
             }
             else
             {
-                transform.Rotate(0, (180 - degreesTurned), 0);
+                transform.Rotate(0, (degreesToTurn - degreesTurned), 0);
                 degreesTurned = 0;
                 currState = (int)State.Walking;
-                moveSpeed *= -1;
-                myMovementVec = new Vector3(0, 0, moveSpeed);
+                //moveSpeed *= -1;
+                //myMovementVec = new Vector3(0, 0, moveSpeed);
+                myMovementVec = transform.forward * moveSpeed;
             }
         }
 
