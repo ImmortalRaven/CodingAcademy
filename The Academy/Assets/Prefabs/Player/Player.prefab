@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1237136347099696838}
   - component: {fileID: 4286590448361597462}
+  - component: {fileID: 645891925066940229}
   - component: {fileID: 7226284849824212409}
   - component: {fileID: 2025234904394772901}
   - component: {fileID: 8401894065834940388}
-  - component: {fileID: 645891925066940229}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -54,6 +54,29 @@ MonoBehaviour:
   lockVertMin: 0
   lockVertMax: 0
   player: {fileID: 1237136347099696838}
+--- !u!114 &645891925066940229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858351108255542424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af09686296a753c4cb8cc342425b37f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::playerControl
+  control: {fileID: 7226284849824212409}
+  Speed: 7
+  HP: 5
+  shootDMG: 1
+  shootDist: 900
+  shootRate: 0.3
+  shootPoint: {fileID: 3586029772881291010}
+  shootSpeed: 5
+  shootDir: {fileID: 3586029772881291010}
+  shootProjectile: {fileID: 5218392285457394489, guid: 0c5669a07e995fe428ca9f6043b37c6f, type: 3}
+  shootSound: {fileID: 8300000, guid: 6c934b71582901b4a95ce8b12f735f0c, type: 3}
 --- !u!143 &7226284849824212409
 CharacterController:
   m_ObjectHideFlags: 0
@@ -136,29 +159,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &645891925066940229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858351108255542424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af09686296a753c4cb8cc342425b37f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::playerControl
-  control: {fileID: 7226284849824212409}
-  Speed: 7
-  HP: 5
-  shootDMG: 1
-  shootDist: 900
-  shootRate: 0.3
-  shootPoint: {fileID: 3586029772881291010}
-  shootSpeed: 5
-  shootDir: {fileID: 3586029772881291010}
-  shootProjectile: {fileID: 5218392285457394489, guid: 0c5669a07e995fe428ca9f6043b37c6f, type: 3}
-  shootSound: {fileID: 8300000, guid: 6c934b71582901b4a95ce8b12f735f0c, type: 3}
 --- !u!1 &994261837576895503
 GameObject:
   m_ObjectHideFlags: 0

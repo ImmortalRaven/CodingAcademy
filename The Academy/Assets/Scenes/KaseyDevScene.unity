@@ -414,38 +414,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
---- !u!1 &154891770
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 154891771}
-  m_Layer: 0
-  m_Name: Walking Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &154891771
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154891770}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.75, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1482265876}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &155813030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1561,11 +1529,6 @@ Transform:
   - {fileID: 1214817308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1482265876 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1977699479643267155, guid: 9c5cc67268312e64789891b04c6adeb5, type: 3}
-  m_PrefabInstance: {fileID: 6543107314163161510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1502359816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2153,7 +2116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5040216324410396325, guid: ec7b7927d9e5cd847bbaf6db5a3ba391, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2166,15 +2129,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 154891771}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1977699479643267155, guid: 9c5cc67268312e64789891b04c6adeb5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 1977699479643267155, guid: 9c5cc67268312e64789891b04c6adeb5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1977699479643267155, guid: 9c5cc67268312e64789891b04c6adeb5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2444,7 +2407,7 @@ SceneRoots:
   - {fileID: 8673290970674286567}
   - {fileID: 1442366320}
   - {fileID: 1143883295}
-  - {fileID: 154891771}
+  - {fileID: 6543107314163161510}
   - {fileID: 3275079603511900205}
   - {fileID: 6851886669081287682}
   - {fileID: 7928232763552204122}
