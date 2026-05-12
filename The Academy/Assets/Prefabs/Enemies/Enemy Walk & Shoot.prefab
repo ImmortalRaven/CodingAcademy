@@ -740,6 +740,8 @@ MonoBehaviour:
   pointDir: {x: 0, y: 0, z: 0}
   speed: 1
   turnSpeed: 8
+  activatorObject: {fileID: 0}
+  active: 0
 --- !u!114 &2861571400266398082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,6 +759,8 @@ MonoBehaviour:
   shootRate: 0.5
   gunPivot: {fileID: 4925939137928899020}
   shootSound: {fileID: 8300000, guid: 0b3399510f26a9d4cacbfd547562143b, type: 3}
+  activatorObject: {fileID: 0}
+  active: 0
 --- !u!114 &5143178066190822384
 MonoBehaviour:
   m_ObjectHideFlags: 0
