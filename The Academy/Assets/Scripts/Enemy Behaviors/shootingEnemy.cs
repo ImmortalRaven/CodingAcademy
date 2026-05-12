@@ -17,8 +17,10 @@ public class shootingEnemy : MonoBehaviour
     [SerializeField] float shootRate;
     [SerializeField] Transform gunPivot;
     [SerializeField] AudioClip shootSound;
+    [SerializeField] GameObject activatorObject;
 
     float shootTimer;
+    public bool active;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,11 +31,15 @@ public class shootingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shootTimer += Time.deltaTime;
-
-        if(shootTimer >= shootRate)
+        CheckActive();
+        if (active)
         {
-            Shoot();
+            shootTimer += Time.deltaTime;
+
+            if (shootTimer >= shootRate)
+            {
+                Shoot();
+            }
         }
     }
 
@@ -42,5 +48,24 @@ public class shootingEnemy : MonoBehaviour
         shootTimer = 0;
         Instantiate(bullet, shootPosition.position, gunPivot.rotation);
         AudioSource.PlayClipAtPoint(shootSound, transform.position);
+    }
+
+    void CheckActive()
+    {
+        if (activatorObject != null)
+        {
+            if (activatorObject.GetComponent<RoomEnterDetector>().roomActive)
+            {
+                active = true;
+            }
+            else
+            {
+                active = false;
+            }
+        }
+        else
+        {
+            active = true;
+        }
     }
 }

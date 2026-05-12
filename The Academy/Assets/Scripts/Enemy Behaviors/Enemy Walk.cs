@@ -20,6 +20,9 @@ public class walkTowardsPoint : MonoBehaviour
     [SerializeField] Vector3 pointDir; //Direction to move towards
     [SerializeField] float speed; //Flat speed value
     [SerializeField] int turnSpeed; //How fast the enemy turns visually
+    [SerializeField] GameObject activatorObject; //What to watch for activity
+
+    public bool active;
 
     float currAngle;
 
@@ -33,8 +36,12 @@ public class walkTowardsPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement(); //Moves towards the direction of the target every frame
-        FaceTarget();
+        CheckActive();
+        if (active)
+        {
+            Movement(); //Moves towards the direction of the target every frame
+            FaceTarget();
+        }
     }
 
     void Movement()
@@ -51,6 +58,26 @@ public class walkTowardsPoint : MonoBehaviour
     {
         Quaternion rot = Quaternion.LookRotation(new Vector3(pointDir.x, 0, pointDir.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * turnSpeed);
+    }
+
+
+    void CheckActive()
+    {
+        if (activatorObject != null)
+        {
+            if (activatorObject.GetComponent<RoomEnterDetector>().roomActive)
+            {
+                active = true;
+            }
+            else
+            {
+                active = false;
+            }
+        }
+        else
+        {
+            active = true;
+        }
     }
 
 }

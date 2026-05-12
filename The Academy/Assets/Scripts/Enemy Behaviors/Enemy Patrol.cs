@@ -22,6 +22,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] int degreesToTurn;
 
     [SerializeField] GameObject detectObject;
+    [SerializeField] GameObject activatorObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     enum State {Walking, Turning};
@@ -29,6 +30,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] int currState;
 
     int degreesTurned;
+    public bool active;
 
     Vector3 myMovementVec;
     void Start()
@@ -40,15 +42,19 @@ public class EnemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckState();
+        CheckActive();
+        if (active)
+        {
+            CheckState();
 
-        if (currState == (int)State.Walking)
-        {
-            controller.Move(myMovementVec * Time.deltaTime);
-        }
-        else if(currState == (int)State.Turning)
-        {
-            Turning();
+            if (currState == (int)State.Walking)
+            {
+                controller.Move(myMovementVec * Time.deltaTime);
+            }
+            else if (currState == (int)State.Turning)
+            {
+                Turning();
+            }
         }
     }
 
@@ -88,5 +94,25 @@ public class EnemyPatrol : MonoBehaviour
             }
         }
 
+    }
+
+
+    void CheckActive()
+    {
+        if (activatorObject != null)
+        {
+            if (activatorObject.GetComponent<RoomEnterDetector>().roomActive)
+            {
+                active = true;
+            }
+            else
+            {
+                active = false;
+            }
+        }
+        else
+        {
+            active = true;
+        }
     }
 }

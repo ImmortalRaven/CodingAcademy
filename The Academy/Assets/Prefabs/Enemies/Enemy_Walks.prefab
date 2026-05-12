@@ -446,6 +446,8 @@ MonoBehaviour:
   pointDir: {x: 0, y: 0, z: 0}
   speed: 3
   turnSpeed: 20
+  activatorObject: {fileID: 0}
+  active: 0
 --- !u!114 &2923942241257500565
 MonoBehaviour:
   m_ObjectHideFlags: 0

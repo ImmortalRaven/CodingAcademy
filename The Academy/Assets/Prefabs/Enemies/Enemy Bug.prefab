@@ -142,6 +142,8 @@ MonoBehaviour:
   pointDir: {x: 0, y: 0, z: 0}
   speed: 6
   turnSpeed: 1
+  activatorObject: {fileID: 0}
+  active: 0
 --- !u!143 &5337648683007187086
 CharacterController:
   m_ObjectHideFlags: 0
@@ -261,8 +263,11 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 0
+  degreesToTurn: 180
   detectObject: {fileID: 2677695598783052348, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
+  activatorObject: {fileID: 0}
   currState: 0
+  active: 0
 --- !u!114 &5987444930038885033
 MonoBehaviour:
   m_ObjectHideFlags: 0
