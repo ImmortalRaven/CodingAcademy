@@ -12,6 +12,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
 
     [SerializeField] float currHealth;
+    [SerializeField] GameObject key;
     void Start()
     {
         
@@ -28,6 +29,10 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         currHealth -= amount;
         if(currHealth <= 0)
         {
+            if (key != null)
+            {
+                Instantiate(key, transform.position, transform.rotation);
+            }
             Destroy(gameObject);
         }
     }
