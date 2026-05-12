@@ -62,7 +62,8 @@ public class playerControl : MonoBehaviour, IDamage
             shootTimer = 0;
             Quaternion adjustedRot = shootDir.rotation;
             adjustedRot.y -= 90;
-            Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+            GameObject bullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+            bullet.GetComponent<damage>().damageAmount = shootDMG;
             if(shootSound != null)
             {
                 AudioSource.PlayClipAtPoint(shootSound, transform.position);
