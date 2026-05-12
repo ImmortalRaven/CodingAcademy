@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 //HOW TO USE:
 /*
@@ -21,6 +22,7 @@ public class walkTowardsPoint : MonoBehaviour
     [SerializeField] float speed; //Flat speed value
     [SerializeField] int turnSpeed; //How fast the enemy turns visually
     [SerializeField] GameObject activatorObject; //What to watch for activity
+    [SerializeField] NavMeshAgent agent;
 
     public bool active;
 
@@ -39,6 +41,7 @@ public class walkTowardsPoint : MonoBehaviour
         CheckActive();
         if (active)
         {
+            agent.SetDestination(gameManager.instance.player.transform.position);
             Movement(); //Moves towards the direction of the target every frame
             FaceTarget();
         }
@@ -50,7 +53,7 @@ public class walkTowardsPoint : MonoBehaviour
         {
             pointDir = target.transform.position - gameObject.transform.position;
             pointDir.y = 0;
-            controller.Move(pointDir.normalized * speed * Time.deltaTime);
+            //controller.Move(pointDir.normalized * speed * Time.deltaTime);
         }
     }
 
