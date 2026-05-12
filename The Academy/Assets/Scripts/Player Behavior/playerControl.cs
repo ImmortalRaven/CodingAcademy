@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 //HOW TO USE:
 /*
  * This is the main script that the player uses. It controls movement, health, and attacking with a projectile.
@@ -37,6 +37,8 @@ public class playerControl : MonoBehaviour, IDamage
     void Start()
     {
         shootRateOrig = shootRate;
+        HPOrigin = HP;
+        updatePlayerUI();
     }
 
     // Update is called once per frame
@@ -77,6 +79,12 @@ public class playerControl : MonoBehaviour, IDamage
     public void takeDamage(int amount)
     {
         HP -= amount;
+        updatePlayerUI();
+        StartCoroutine(flashDamageScreen());
+        if(HP <= 0)
+        {
+            gameManager.instance.YouLose();
+        }
 
     }
     public void ModifySpeed(int amount)
@@ -92,5 +100,16 @@ public class playerControl : MonoBehaviour, IDamage
         shootRate += amount;
         if (shootRate < 0.1f) shootRate = 0.1f;
         if (shootRate > shootRateOrig) shootRate = shootRateOrig;
+    }
+
+    public void updatePlayerUI()
+    {
+        gameManager.instance.playerHPBar.fillAmount = (float)HP / HPOrigin;
+    }
+    IEnumerator flashDamageScreen()
+    {
+        gameManager.instance.playerDamageScreen.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        gameManager.instance.playerDamageScreen.SetActive(false);
     }
 }
