@@ -32,11 +32,11 @@ public class playerControl : MonoBehaviour, IDamage
     Vector3 moveDirection;
     int HPOrigin;
     float shootTimer;
-
+    public float shootRateOrig;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        shootRateOrig = shootRate;
     }
 
     // Update is called once per frame
@@ -91,5 +91,6 @@ public class playerControl : MonoBehaviour, IDamage
     {
         shootRate += amount;
         if (shootRate < 0.1f) shootRate = 0.1f;
+        if (shootRate > shootRateOrig) shootRate = shootRateOrig;
     }
 }
