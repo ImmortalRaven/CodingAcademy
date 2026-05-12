@@ -81,6 +81,10 @@ public class playerControl : MonoBehaviour, IDamage
         HP -= amount;
         updatePlayerUI();
         StartCoroutine(flashDamageScreen());
+        if(HP <= 0)
+        {
+            gameManager.instance.YouLose();
+        }
 
     }
     public void ModifySpeed(int amount)
