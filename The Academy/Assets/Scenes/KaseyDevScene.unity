@@ -429,7 +429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &154891771
 Transform:
   m_ObjectHideFlags: 0
@@ -2151,6 +2151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Walk & Shoot
       objectReference: {fileID: 0}
+    - target: {fileID: 5040216324410396325, guid: ec7b7927d9e5cd847bbaf6db5a3ba391, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2221,6 +2225,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5483489534304985808, guid: ec300df70d15a2a47a2320acfa1b11f5, type: 3}
+      propertyPath: degreesToTurn
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 6917235248123269182, guid: ec300df70d15a2a47a2320acfa1b11f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.78388
@@ -2433,10 +2441,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1978570560}
-  - {fileID: 154891771}
   - {fileID: 8673290970674286567}
   - {fileID: 1442366320}
   - {fileID: 1143883295}
+  - {fileID: 154891771}
   - {fileID: 3275079603511900205}
   - {fileID: 6851886669081287682}
   - {fileID: 7928232763552204122}
