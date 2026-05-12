@@ -45,6 +45,10 @@ public class walkTowardsPoint : MonoBehaviour
             Movement(); //Moves towards the direction of the target every frame
             FaceTarget();
         }
+        else
+        {
+            agent.SetDestination(transform.position);
+        }
     }
 
     void Movement()

@@ -77,6 +77,10 @@ public class playerControl : MonoBehaviour, IDamage
     public void takeDamage(int amount)
     {
         HP -= amount;
+        if(HP <= 0)
+        {
+            gameManager.instance.YouLose();
+        }
 
     }
     public void ModifySpeed(int amount)

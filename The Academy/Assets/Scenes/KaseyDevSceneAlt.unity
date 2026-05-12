@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1977699479643267155, guid: 9c5cc67268312e64789891b04c6adeb5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000012196397
+      value: 1.0000012
       objectReference: {fileID: 0}
     - target: {fileID: 1977699479643267155, guid: 9c5cc67268312e64789891b04c6adeb5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6167997174668170414, guid: 386cddeef3bce5645afacfa579646dff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6167997174668170414, guid: 386cddeef3bce5645afacfa579646dff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -227,6 +227,10 @@ PrefabInstance:
     - target: {fileID: 7486305090936401972, guid: 386cddeef3bce5645afacfa579646dff, type: 3}
       propertyPath: m_Name
       value: NavMesh Surface
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486305090936401972, guid: 386cddeef3bce5645afacfa579646dff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8720608502280154110, guid: 386cddeef3bce5645afacfa579646dff, type: 3}
       propertyPath: m_NavMeshData
@@ -382,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1237136347099696838, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000021598144
+      value: 0.37500215
       objectReference: {fileID: 0}
     - target: {fileID: 1237136347099696838, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -492,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4684435007610853772, guid: ec7b7927d9e5cd847bbaf6db5a3ba391, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000004948133
+      value: 1.000005
       objectReference: {fileID: 0}
     - target: {fileID: 4684435007610853772, guid: ec7b7927d9e5cd847bbaf6db5a3ba391, type: 3}
       propertyPath: m_LocalPosition.z

@@ -1045,6 +1045,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 192296697947019611, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
   m_PrefabInstance: {fileID: 155813030}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &872872827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 381525285780011651, guid: f5b6ce807ec456c449b78d79d7359f09, type: 3}
+  m_PrefabInstance: {fileID: 2686773763535976427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &875094552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 192296697947019611, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
@@ -2216,6 +2221,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2861571400266398082, guid: ec7b7927d9e5cd847bbaf6db5a3ba391, type: 3}
+      propertyPath: activatorObject
+      value: 
+      objectReference: {fileID: 872872827}
     - target: {fileID: 4684435007610853772, guid: ec7b7927d9e5cd847bbaf6db5a3ba391, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2260,6 +2269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Walk & Shoot
       objectReference: {fileID: 0}
+    - target: {fileID: 6020489939837460663, guid: ec7b7927d9e5cd847bbaf6db5a3ba391, type: 3}
+      propertyPath: activatorObject
+      value: 
+      objectReference: {fileID: 872872827}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2374,6 +2387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Walks
       objectReference: {fileID: 0}
+    - target: {fileID: 5301498591442181048, guid: 9c5cc67268312e64789891b04c6adeb5, type: 3}
+      propertyPath: activatorObject
+      value: 
+      objectReference: {fileID: 872872827}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2387,6 +2404,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5483489534304985808, guid: ec300df70d15a2a47a2320acfa1b11f5, type: 3}
+      propertyPath: activatorObject
+      value: 
+      objectReference: {fileID: 872872827}
     - target: {fileID: 6917235248123269182, guid: ec300df70d15a2a47a2320acfa1b11f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.78388
@@ -2588,10 +2609,6 @@ PrefabInstance:
     - target: {fileID: 1237136347099696838, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226284849824212409, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
-      propertyPath: m_Center.y
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

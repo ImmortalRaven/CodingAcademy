@@ -14,7 +14,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     [SerializeField] float currHealth;
     void Start()
     {
-        
+        gameManager.instance.updateGameGoal(1);
     }
 
     // Update is called once per frame
@@ -28,6 +28,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         currHealth -= amount;
         if(currHealth <= 0)
         {
+            gameManager.instance.updateGameGoal(-1);
             Destroy(gameObject);
         }
     }
