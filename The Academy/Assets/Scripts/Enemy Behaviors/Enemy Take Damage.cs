@@ -12,6 +12,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
 
     [SerializeField] float currHealth;
+    [SerializeField] GameObject key;
     void Start()
     {
         gameManager.instance.updateGameGoal(1);
@@ -29,6 +30,10 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         if(currHealth <= 0)
         {
             gameManager.instance.updateGameGoal(-1);
+            if (key != null)
+            {
+                Instantiate(key, transform.position, transform.rotation);
+            }
             Destroy(gameObject);
         }
     }
