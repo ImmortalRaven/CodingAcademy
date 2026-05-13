@@ -118,7 +118,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -143,6 +143,7 @@ MonoBehaviour:
   speed: 6
   turnSpeed: 1
   activatorObject: {fileID: 0}
+  agent: {fileID: 0}
   active: 0
 --- !u!143 &5337648683007187086
 CharacterController:
@@ -183,6 +184,7 @@ GameObject:
   - component: {fileID: 5483489534304985808}
   - component: {fileID: 5987444930038885033}
   - component: {fileID: 6216869275365744882}
+  - component: {fileID: 7796857777591259071}
   m_Layer: 0
   m_Name: Enemy Bug
   m_TagString: Enemy
@@ -244,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTakeDamage
   currHealth: 2
+  key: {fileID: 0}
 --- !u!114 &5483489534304985808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +267,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   degreesToTurn: 180
+  checkLayer:
+    serializedVersion: 2
+    m_Bits: 128
   detectObject: {fileID: 2677695598783052348, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
   activatorObject: {fileID: 0}
   currState: 0
@@ -314,6 +320,18 @@ CapsuleCollider:
   m_Height: 2.3
   m_Direction: 2
   m_Center: {x: 0, y: 0.3, z: 0}
+--- !u!114 &7796857777591259071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8918540846372328120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58561b4c3c0bdc42a7701346fb2bb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::yPositionLock
 --- !u!1001 &4144889135711857208
 PrefabInstance:
   m_ObjectHideFlags: 0

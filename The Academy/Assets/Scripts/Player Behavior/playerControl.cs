@@ -33,9 +33,12 @@ public class playerControl : MonoBehaviour, IDamage
     int HPOrigin;
     float shootTimer;
     public float shootRateOrig;
+
+    float expectedYPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        expectedYPos = transform.position.y;
         shootRateOrig = shootRate;
         HPOrigin = HP;
         updatePlayerUI();
@@ -53,6 +56,7 @@ public class playerControl : MonoBehaviour, IDamage
     {
         moveDirection = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
         control.Move(moveDirection * Speed * Time.deltaTime);
+        LockYPos();
     }
 
     void Shoot()
@@ -111,5 +115,10 @@ public class playerControl : MonoBehaviour, IDamage
         gameManager.instance.playerDamageScreen.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerDamageScreen.SetActive(false);
+    }
+
+    void LockYPos()
+    {
+        transform.position = new Vector3(transform.position.x, expectedYPos, transform.position.z);
     }
 }

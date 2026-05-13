@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5109722269469189564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Basic Room 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
