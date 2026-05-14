@@ -4622,6 +4622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireRateBuff (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2309451152258403892, guid: ddd7315aed81ddc428077e3fec4bad19, type: 3}
+      propertyPath: buffAmount
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

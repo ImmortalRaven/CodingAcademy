@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InanimateTakeDamage
   currHealth: 3
-  key: {fileID: 0}
+  key: {fileID: 1111790043754210891, guid: 07e90d6ab5db7584f85bf09976804e13, type: 3}
 --- !u!1 &8792051447175949879
 GameObject:
   m_ObjectHideFlags: 0
