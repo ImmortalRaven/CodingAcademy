@@ -17,8 +17,10 @@ public class gameManager : MonoBehaviour
     public bool isPaused;
     public GameObject player;
     public playerControl playercontrol;
+    public GameObject[] bossDoors;
 
     int gameGoalCount;
+    int keyGoalCount;
 
     float timeScaleOrig;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -76,6 +78,20 @@ public class gameManager : MonoBehaviour
             menuActive.SetActive(true);
         }
 
+    }
+
+    public void updateKeyGoal(int amount)
+    {
+        keyGoalCount += amount;
+
+        if (keyGoalCount <= 0)
+        {
+            bossDoors = GameObject.FindGameObjectsWithTag("BossDoor");
+            foreach (GameObject door in bossDoors)
+            {
+                Destroy(door);
+            }
+        }
     }
 
     public void YouLose()

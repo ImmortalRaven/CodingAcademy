@@ -798,6 +798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTakeDamage
   currHealth: 3
+  key: {fileID: 0}
+  rend: {fileID: 7018984796132289357}
 --- !u!143 &432741262368917769
 CharacterController:
   m_ObjectHideFlags: 0
