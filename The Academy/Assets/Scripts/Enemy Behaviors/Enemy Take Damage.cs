@@ -32,6 +32,10 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
                 allColors[i] = (allRenders[i].material.color);
             }
         
+        if (key != null)
+        {
+            gameManager.instance.updateKeyGoal(1);
+        }
     }
 
     // Update is called once per frame
