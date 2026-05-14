@@ -15,7 +15,10 @@ public class InanimateTakeDamage : MonoBehaviour, IDamage
     [SerializeField] GameObject key;
     void Start()
     {
-       
+        if (key != null)
+        {
+            gameManager.instance.updateKeyGoal(1);
+        }
     }
 
     // Update is called once per frame

@@ -16,6 +16,10 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     void Start()
     {
         gameManager.instance.updateGameGoal(1);
+        if (key != null)
+        {
+            gameManager.instance.updateKeyGoal(1);
+        }
     }
 
     // Update is called once per frame
