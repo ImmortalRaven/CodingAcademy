@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fear : MonoBehaviour
+public class FearBody : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +25,7 @@ public class Fear : MonoBehaviour
     {
         if (other.gameObject == gameManager.instance.player)
         {
-            gameManager.instance.playercontrol.ModifyMood(false);
+            //gameManager.instance.playercontrol.ModifyMood(false);
         }
     }
 }

@@ -52,7 +52,10 @@ public class playerControl : MonoBehaviour, IDamage
     {
         shootTimer += Time.deltaTime;
         movement();
-        Shoot();
+        if (!fear)
+        {
+            Shoot();
+        }
     }
 
     void movement()
