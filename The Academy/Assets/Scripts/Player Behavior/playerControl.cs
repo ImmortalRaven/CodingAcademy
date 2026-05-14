@@ -34,6 +34,8 @@ public class playerControl : MonoBehaviour, IDamage
     float shootTimer;
     public float shootRateOrig;
 
+    bool fear;
+
     float expectedYPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +43,7 @@ public class playerControl : MonoBehaviour, IDamage
         expectedYPos = transform.position.y;
         shootRateOrig = shootRate;
         HPOrigin = HP;
+        fear = false;
         updatePlayerUI();
     }
 
@@ -63,18 +66,21 @@ public class playerControl : MonoBehaviour, IDamage
     {
         bool mouseDown = Input.GetMouseButton(0);
 
-        if (mouseDown && shootTimer >= shootRate)
+        if (!fear)
         {
-            shootTimer = 0;
-            Quaternion adjustedRot = shootDir.rotation;
-            adjustedRot.y -= 90;
-            GameObject bullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
-            bullet.GetComponent<damage>().damageAmount = shootDMG;
-            if(shootSound != null)
+            if (mouseDown && shootTimer >= shootRate)
             {
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                shootTimer = 0;
+                Quaternion adjustedRot = shootDir.rotation;
+                adjustedRot.y -= 90;
+                GameObject bullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+                bullet.GetComponent<damage>().damageAmount = shootDMG;
+                if (shootSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                }
+
             }
-            
         }
 
     }
@@ -104,6 +110,11 @@ public class playerControl : MonoBehaviour, IDamage
         shootRate += amount;
         if (shootRate < 0.1f) shootRate = 0.1f;
         if (shootRate > shootRateOrig) shootRate = shootRateOrig;
+    }
+
+    public void ModifyMood(bool afraid)
+    {
+        fear = afraid;
     }
 
     public void updatePlayerUI()
