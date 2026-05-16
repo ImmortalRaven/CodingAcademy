@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class FearBody : MonoBehaviour
 {
+
+    [SerializeField] GameObject enemyToSpawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameManager.instance.updateGameGoal(1);
     }
 
     // Update is called once per frame
@@ -25,7 +27,11 @@ public class FearBody : MonoBehaviour
     {
         if (other.gameObject == gameManager.instance.player)
         {
-            //gameManager.instance.playercontrol.ModifyMood(false);
         }
+    }
+
+    private void OnDestroy()
+    {
+        gameManager.instance.playercontrol.ModifyMood(false);
     }
 }
