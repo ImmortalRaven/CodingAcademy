@@ -17,6 +17,9 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     [SerializeField] GameObject key;
     [SerializeField] Renderer rend;
 
+    [SerializeField] GameObject spawnedObj;
+    [SerializeField] int numToSpawn;
+
     Color colorOrig;
 
     Renderer[] allRenders;
@@ -56,7 +59,10 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
             {
                 Instantiate(key, transform.position, transform.rotation);
             }
-            Destroy(gameObject);
+
+
+            MakeGuts();
+            
         }
         else
         {
@@ -78,5 +84,18 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
             allRenders[i].material.color = allColors[i];
         }
         
+    }
+
+    private void OnDestroy()
+    {
+        //MakeGuts();
+    }
+    public void MakeGuts()
+    {
+        for (int i = 0; i < numToSpawn; i++)
+        {
+            Instantiate(spawnedObj, transform.position, transform.rotation);
+        }
+        Destroy(gameObject);
     }
 }

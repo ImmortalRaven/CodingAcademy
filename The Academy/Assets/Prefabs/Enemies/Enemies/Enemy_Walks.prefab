@@ -487,6 +487,8 @@ MonoBehaviour:
   currHealth: 5
   key: {fileID: 0}
   rend: {fileID: 2926811493459438075}
+  spawnedObj: {fileID: 608757744892499585, guid: 637393fc33023f74184ed0cec569f9b8, type: 3}
+  numToSpawn: 20
 --- !u!143 &2952350200417982552
 CharacterController:
   m_ObjectHideFlags: 0

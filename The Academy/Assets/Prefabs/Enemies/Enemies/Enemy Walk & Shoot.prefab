@@ -678,10 +678,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4684435007610853772}
   - component: {fileID: 3222544220258257841}
+  - component: {fileID: 5143178066190822384}
   - component: {fileID: 6020489939837460663}
   - component: {fileID: 6133773310049086671}
   - component: {fileID: 2861571400266398082}
-  - component: {fileID: 5143178066190822384}
   - component: {fileID: 432741262368917769}
   - component: {fileID: 7018984796132289357}
   - component: {fileID: 2343474739404312601}
@@ -723,6 +723,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5040216324410396325}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5143178066190822384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040216324410396325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e16eb3ab7cae144bf8a8a2dd96623f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyTakeDamage
+  currHealth: 3
+  key: {fileID: 0}
+  rend: {fileID: 7018984796132289357}
+  spawnedObj: {fileID: 608757744892499585, guid: 637393fc33023f74184ed0cec569f9b8, type: 3}
+  numToSpawn: 20
 --- !u!114 &6020489939837460663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,21 +802,6 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 0b3399510f26a9d4cacbfd547562143b, type: 3}
   activatorObject: {fileID: 0}
   active: 0
---- !u!114 &5143178066190822384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040216324410396325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e16eb3ab7cae144bf8a8a2dd96623f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyTakeDamage
-  currHealth: 3
-  key: {fileID: 0}
-  rend: {fileID: 7018984796132289357}
 --- !u!143 &432741262368917769
 CharacterController:
   m_ObjectHideFlags: 0

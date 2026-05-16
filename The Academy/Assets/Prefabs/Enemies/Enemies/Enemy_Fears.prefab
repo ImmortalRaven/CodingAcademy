@@ -2544,6 +2544,8 @@ MonoBehaviour:
   currHealth: 5
   key: {fileID: 0}
   rend: {fileID: 537724187153760397}
+  spawnedObj: {fileID: 608757744892499585, guid: 849c33d9daa63934da848b9ac15f14a0, type: 3}
+  numToSpawn: 20
 --- !u!143 &2701238307469999253
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2676,6 +2678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa0046c8c4fa484f8dfaf43c28c8f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FearBody
+  enemyToSpawn: {fileID: 0}
 --- !u!1 &5557581809192475299
 GameObject:
   m_ObjectHideFlags: 0
