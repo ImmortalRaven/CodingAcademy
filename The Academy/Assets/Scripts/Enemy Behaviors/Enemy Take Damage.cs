@@ -28,6 +28,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     {
         colorOrig = rend.material.color;
         gameManager.instance.updateGameGoal(1);
+        gameManager.instance.updateEnemyCount(1);
         allRenders = GetComponentsInChildren<Renderer>();
         allColors = new Color[allRenders.Length];
         for (int i = 0; i < allRenders.Length; i++)

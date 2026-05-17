@@ -18,8 +18,10 @@ public class gameManager : MonoBehaviour
     public GameObject player;
     public playerControl playercontrol;
     public GameObject[] bossDoors;
+    public GameObject regDoors;
 
     int gameGoalCount;
+    int enemyCount;
     int keyGoalCount;
 
     float timeScaleOrig;
@@ -66,6 +68,16 @@ public class gameManager : MonoBehaviour
         menuActive = null;
     }
 
+    public void updateEnemyCount(int amount)
+    {
+        enemyCount += amount;
+        if (enemyCount <= 0)
+        {
+            regDoors = GameObject.FindGameObjectWithTag("RegDoor");
+            regDoors.SetActive(false);
+        }
+
+    }
     public void updateGameGoal(int amount)
     {
         gameGoalCount += amount;
@@ -78,6 +90,11 @@ public class gameManager : MonoBehaviour
             menuActive.SetActive(true);
         }
 
+    }
+
+    public int getEnemyCount()
+    {
+        return enemyCount;
     }
 
     public void updateKeyGoal(int amount)
