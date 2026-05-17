@@ -33,11 +33,17 @@ public class playerControl : MonoBehaviour, IDamage
     int HPOrigin;
     float shootTimer;
     public float shootRateOrig;
+
+    bool fear;
+
+    float expectedYPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        expectedYPos = transform.position.y;
         shootRateOrig = shootRate;
         HPOrigin = HP;
+        fear = false;
         updatePlayerUI();
     }
 
@@ -46,31 +52,38 @@ public class playerControl : MonoBehaviour, IDamage
     {
         shootTimer += Time.deltaTime;
         movement();
-        Shoot();
+        if (!fear)
+        {
+            Shoot();
+        }
     }
 
     void movement()
     {
         moveDirection = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
         control.Move(moveDirection * Speed * Time.deltaTime);
+        LockYPos();
     }
 
     void Shoot()
     {
         bool mouseDown = Input.GetMouseButton(0);
 
-        if (mouseDown && shootTimer >= shootRate)
+        if (!fear)
         {
-            shootTimer = 0;
-            Quaternion adjustedRot = shootDir.rotation;
-            adjustedRot.y -= 90;
-            GameObject bullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
-            bullet.GetComponent<damage>().damageAmount = shootDMG;
-            if(shootSound != null)
+            if (mouseDown && shootTimer >= shootRate)
             {
-                AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                shootTimer = 0;
+                Quaternion adjustedRot = shootDir.rotation;
+                adjustedRot.y -= 90;
+                GameObject bullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+                bullet.GetComponent<damage>().damageAmount = shootDMG;
+                if (shootSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                }
+
             }
-            
         }
 
     }
@@ -102,6 +115,11 @@ public class playerControl : MonoBehaviour, IDamage
         if (shootRate > shootRateOrig) shootRate = shootRateOrig;
     }
 
+    public void ModifyMood(bool afraid)
+    {
+        fear = afraid;
+    }
+
     public void updatePlayerUI()
     {
         gameManager.instance.playerHPBar.fillAmount = (float)HP / HPOrigin;
@@ -111,5 +129,10 @@ public class playerControl : MonoBehaviour, IDamage
         gameManager.instance.playerDamageScreen.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerDamageScreen.SetActive(false);
+    }
+
+    void LockYPos()
+    {
+        transform.position = new Vector3(transform.position.x, expectedYPos, transform.position.z);
     }
 }

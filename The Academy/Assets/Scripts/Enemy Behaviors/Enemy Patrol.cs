@@ -10,6 +10,8 @@ using UnityEngine;
  * seeDist is how far in front of it the object will see with this script.
  * ignoreLayer can be used to ignore any objects on a specific layer when detecting.
  * degreesToTurn is how many degrees the enemy should turn before returning to walking. Good choices are 90 and 180, but it may be customized further.
+ * detectObject is not currently used
+ * activatorObject is what the enemy will look at to determine if it should be active or not. This should be RoomActivate
  */
 public class EnemyPatrol : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] float seeDist;
     [SerializeField] LayerMask ignoreLayer;
     [SerializeField] int degreesToTurn;
+    [SerializeField] LayerMask checkLayer;
 
     [SerializeField] GameObject detectObject;
     [SerializeField] GameObject activatorObject;
@@ -62,12 +65,12 @@ public class EnemyPatrol : MonoBehaviour
     {
         RaycastHit wallDetector;
         Debug.DrawRay(transform.position, transform.forward * seeDist, Color.yellow);
-        if (Physics.Raycast(transform.position, transform.forward, out wallDetector, seeDist, ~ignoreLayer))
+        if (Physics.Raycast(transform.position, transform.forward, out wallDetector, seeDist, checkLayer))
         {
             Debug.Log(wallDetector.collider.name);
 
             string hitObj = wallDetector.collider.name.Substring(0,4);
-            if (hitObj == "Wall")
+            if (hitObj != null)
             {
                 currState = (int)State.Turning;
             }

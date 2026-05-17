@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using System.Collections;
+using UnityEngine.AI;
+using System.Linq;
 
 //HOW TO USE:
 /*
@@ -13,9 +15,30 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
     [SerializeField] float currHealth;
     [SerializeField] GameObject key;
+    [SerializeField] Renderer rend;
+
+    [SerializeField] GameObject spawnedObj;
+    [SerializeField] int numToSpawn;
+
+    Color colorOrig;
+
+    Renderer[] allRenders;
+    Color[] allColors;
     void Start()
     {
+        colorOrig = rend.material.color;
         gameManager.instance.updateGameGoal(1);
+        allRenders = GetComponentsInChildren<Renderer>();
+        allColors = new Color[allRenders.Length];
+        for (int i = 0; i < allRenders.Length; i++)
+            {
+                allColors[i] = (allRenders[i].material.color);
+            }
+        
+        if (key != null)
+        {
+            gameManager.instance.updateKeyGoal(1);
+        }
     }
 
     // Update is called once per frame
@@ -26,6 +49,8 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
     public void takeDamage(int amount)
     {
+
+        
         currHealth -= amount;
         if(currHealth <= 0)
         {
@@ -34,7 +59,43 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
             {
                 Instantiate(key, transform.position, transform.rotation);
             }
-            Destroy(gameObject);
+
+
+            MakeGuts();
+            
         }
+        else
+        {
+            StartCoroutine(flashRed());
+        }
+    }
+
+    IEnumerator flashRed()
+    {
+        rend.material.color = Color.red;
+        for(int i = 0; i < allRenders.Length; i++)
+        {
+            allRenders[i].material.color = Color.red;
+        }
+        yield return new WaitForSeconds(0.1f);
+        rend.material.color = colorOrig;
+        for(int i = 0; i < allRenders.Length; i++)
+        {
+            allRenders[i].material.color = allColors[i];
+        }
+        
+    }
+
+    private void OnDestroy()
+    {
+        //MakeGuts();
+    }
+    public void MakeGuts()
+    {
+        for (int i = 0; i < numToSpawn; i++)
+        {
+            Instantiate(spawnedObj, transform.position, transform.rotation);
+        }
+        Destroy(gameObject);
     }
 }

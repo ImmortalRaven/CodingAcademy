@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7226284849824212409}
   - component: {fileID: 2025234904394772901}
   - component: {fileID: 8401894065834940388}
+  - component: {fileID: 7783069935575101156}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::playerControl
   control: {fileID: 7226284849824212409}
   Speed: 7
-  HP: 5
+  HP: 10
   shootDMG: 1
   shootDist: 900
   shootRate: 0.3
@@ -160,6 +161,18 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7783069935575101156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858351108255542424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58561b4c3c0bdc42a7701346fb2bb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::yPositionLock
 --- !u!1 &994261837576895503
 GameObject:
   m_ObjectHideFlags: 0
