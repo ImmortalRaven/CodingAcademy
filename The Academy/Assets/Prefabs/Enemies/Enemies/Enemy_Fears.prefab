@@ -2545,7 +2545,8 @@ MonoBehaviour:
   key: {fileID: 0}
   rend: {fileID: 537724187153760397}
   spawnedObj: {fileID: 608757744892499585, guid: 849c33d9daa63934da848b9ac15f14a0, type: 3}
-  numToSpawn: 20
+  numToSpawnHit: 6
+  numToSpawnDeath: 28
 --- !u!143 &2701238307469999253
 CharacterController:
   m_ObjectHideFlags: 0
