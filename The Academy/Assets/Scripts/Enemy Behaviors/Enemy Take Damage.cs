@@ -18,7 +18,8 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     [SerializeField] Renderer rend;
 
     [SerializeField] GameObject spawnedObj;
-    [SerializeField] int numToSpawn;
+    [SerializeField] int numToSpawnHit;
+    [SerializeField] int numToSpawnDeath;
 
     Color colorOrig;
 
@@ -53,6 +54,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
         
         currHealth -= amount;
+        MakeGuts(numToSpawnHit);
         if(currHealth <= 0)
         {
             gameManager.instance.updateGameGoal(-1);
@@ -62,8 +64,9 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
             }
 
 
-            MakeGuts();
-            
+            MakeGuts(numToSpawnDeath);
+            Destroy(gameObject);
+
         }
         else
         {
@@ -91,12 +94,12 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     {
         //MakeGuts();
     }
-    public void MakeGuts()
+    public void MakeGuts(int amount)
     {
-        for (int i = 0; i < numToSpawn; i++)
+        for (int i = 0; i < amount; i++)
         {
             Instantiate(spawnedObj, transform.position, transform.rotation);
         }
-        Destroy(gameObject);
+        
     }
 }
