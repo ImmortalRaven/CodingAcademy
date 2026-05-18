@@ -5,6 +5,7 @@ public class Bomb : MonoBehaviour
 {
     [SerializeField] float radius;
     [SerializeField] int secToExplosion;
+    [SerializeField] int damage;
     [SerializeField] Renderer rend;
     [SerializeField] GameObject warningCircle;
     Color colorOrig;
@@ -35,7 +36,7 @@ public class Bomb : MonoBehaviour
             IDamage dmg = obj.gameObject.GetComponent<IDamage>();
             if (dmg != null)
             {
-                dmg.takeDamage(5);
+                dmg.takeDamage(damage);
             }
             else if (obj.CompareTag("Breakable"))
             {

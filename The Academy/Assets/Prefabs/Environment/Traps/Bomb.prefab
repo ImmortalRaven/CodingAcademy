@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bomb
   radius: 5
   secToExplosion: 5
+  damage: 5
   rend: {fileID: 5837493868475194765}
   warningCircle: {fileID: 3328174372908231659}
 --- !u!33 &2647610176331242976
