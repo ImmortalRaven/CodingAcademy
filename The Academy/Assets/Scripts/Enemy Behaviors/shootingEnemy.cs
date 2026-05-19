@@ -18,8 +18,12 @@ public class shootingEnemy : MonoBehaviour
     [SerializeField] Transform gunPivot;
     [SerializeField] AudioClip shootSound;
     [SerializeField] GameObject activatorObject;
+    [SerializeField] int FoV;
 
+
+    Vector3 playerDirection;
     float shootTimer;
+    float angleToPlayer;
     public bool active;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,13 +38,37 @@ public class shootingEnemy : MonoBehaviour
         CheckActive();
         if (active)
         {
-            shootTimer += Time.deltaTime;
-
-            if (shootTimer >= shootRate)
+            if (PlayerSeen())
             {
-                Shoot();
+                shootTimer += Time.deltaTime;
+
+                if (shootTimer >= shootRate)
+                {
+                    Shoot();
+                }
             }
         }
+    }
+
+    bool PlayerSeen()
+    {
+        bool playerSeen = false;
+        playerDirection = gameManager.instance.player.transform.position - transform.position;
+        angleToPlayer = Vector3.Angle(playerDirection, transform.forward);
+
+        Debug.DrawRay(transform.position, playerDirection);
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, playerDirection, out hit))
+        {
+            if (hit.collider.CompareTag("Player") && angleToPlayer <= FoV)
+            {
+
+                playerSeen = true;
+            }
+        }
+
+        return playerSeen;
     }
 
     void Shoot()

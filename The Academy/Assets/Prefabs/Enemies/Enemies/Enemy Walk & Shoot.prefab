@@ -784,6 +784,7 @@ MonoBehaviour:
   gunPivot: {fileID: 4925939137928899020}
   shootSound: {fileID: 8300000, guid: 0b3399510f26a9d4cacbfd547562143b, type: 3}
   activatorObject: {fileID: 0}
+  FoV: 45
   active: 0
 --- !u!114 &5143178066190822384
 MonoBehaviour:
