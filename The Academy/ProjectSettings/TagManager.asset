@@ -9,6 +9,8 @@ TagManager:
   - KeyHolder
   - BossDoor
   - Activator
+  - RegDoor
+  - Breakable
   layers:
   - Default
   - TransparentFX

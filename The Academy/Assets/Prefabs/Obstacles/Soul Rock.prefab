@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1791383900973916909}
   m_Layer: 0
   m_Name: Soul Rock
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

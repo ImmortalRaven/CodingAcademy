@@ -17,6 +17,10 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     [SerializeField] GameObject key;
     [SerializeField] Renderer rend;
 
+    [SerializeField] GameObject spawnedObj;
+    [SerializeField] int numToSpawnHit;
+    [SerializeField] int numToSpawnDeath;
+
     Color colorOrig;
 
     Renderer[] allRenders;
@@ -25,6 +29,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     {
         colorOrig = rend.material.color;
         gameManager.instance.updateGameGoal(1);
+        gameManager.instance.updateEnemyCount(1);
         allRenders = GetComponentsInChildren<Renderer>();
         allColors = new Color[allRenders.Length];
         for (int i = 0; i < allRenders.Length; i++)
@@ -49,6 +54,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
         
         currHealth -= amount;
+        MakeGuts(numToSpawnHit);
         if(currHealth <= 0)
         {
             gameManager.instance.updateGameGoal(-1);
@@ -56,7 +62,11 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
             {
                 Instantiate(key, transform.position, transform.rotation);
             }
+
+
+            MakeGuts(numToSpawnDeath);
             Destroy(gameObject);
+
         }
         else
         {
@@ -76,6 +86,19 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         for(int i = 0; i < allRenders.Length; i++)
         {
             allRenders[i].material.color = allColors[i];
+        }
+        
+    }
+
+    private void OnDestroy()
+    {
+        //MakeGuts();
+    }
+    public void MakeGuts(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Instantiate(spawnedObj, transform.position, transform.rotation);
         }
         
     }

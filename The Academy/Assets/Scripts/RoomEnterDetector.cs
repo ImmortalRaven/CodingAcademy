@@ -6,6 +6,7 @@ public class RoomEnterDetector : MonoBehaviour
 {
 
     [SerializeField] string expectedTag;
+    [SerializeField] GameObject doors;
 
     public bool roomActive = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,6 +31,10 @@ public class RoomEnterDetector : MonoBehaviour
         if(other.tag == expectedTag)
         {
             roomActive = true;
+            if (gameManager.instance.getEnemyCount() > 0)
+            {
+                doors.SetActive(true);
+            }
         }
     }
 
