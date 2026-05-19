@@ -118,6 +118,8 @@ public class playerControl : MonoBehaviour, IDamage
     public void ModifyMood(bool afraid)
     {
         fear = afraid;
+        StartCoroutine(FearScreen());
+
     }
 
     public void updatePlayerUI()
@@ -129,6 +131,13 @@ public class playerControl : MonoBehaviour, IDamage
         gameManager.instance.playerDamageScreen.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerDamageScreen.SetActive(false);
+    }
+
+    IEnumerator FearScreen()
+    {
+       gameManager.instance.playerFearFactor.SetActive(true);
+        yield return new WaitUntil(() => !fear);
+        gameManager.instance.playerFearFactor.SetActive(false);
     }
 
     void LockYPos()
