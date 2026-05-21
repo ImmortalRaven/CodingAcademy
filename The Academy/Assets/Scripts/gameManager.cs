@@ -78,8 +78,11 @@ public class gameManager : MonoBehaviour
         enemyCount += amount;
         if (enemyCount <= 0)
         {
-            regDoors = GameObject.FindGameObjectWithTag("RegDoor");
-            regDoors.SetActive(false);
+            if (regDoors != null)
+            {
+                regDoors = GameObject.FindGameObjectWithTag("RegDoor");
+                regDoors.SetActive(false);
+            }
         }
 
     }
