@@ -13,16 +13,20 @@ using UnityEngine;
  */
 public class shootingEnemy : MonoBehaviour
 {
+    [Header("----- Firing Location -----")]
     [SerializeField] Transform shootPosition;
     [SerializeField] Transform gunPivot;
-    [SerializeField] AudioClip shootSound;
-    [SerializeField] GameObject activatorObject;
-    [SerializeField] int FoV;
 
+    [Header("----- Weapons and FoV -----")]
+    [SerializeField] int FoV;
+    [SerializeField] AudioClip shootSound;
     [SerializeField] List<GunStats> gunList = new List<GunStats>();
     [SerializeField] GameObject gunModel;
     [SerializeField] GunStats startingGun;
 
+    [Header("----- Activation (Do Not Set Manually) -----")]
+    [SerializeField] GameObject activatorObject;
+    public bool active;
 
     Vector3 playerDirection;
 
@@ -30,7 +34,7 @@ public class shootingEnemy : MonoBehaviour
     int gunListPosition = 0;
     float shootTimer;
     float angleToPlayer;
-    public bool active;
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

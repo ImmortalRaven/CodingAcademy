@@ -14,15 +14,20 @@ using UnityEngine.AI;
  */
 public class walkTowardsPoint : MonoBehaviour
 {
-
+    [Header("----- Targetting/Movement Setup -----")]
     [SerializeField] CharacterController controller;
-    [SerializeField] GameObject target; //This is not currently used.
+    [SerializeField] NavMeshAgent agent;
+    [SerializeField] GameObject target; //This is set during start function.
     [SerializeField] string targetName; //*IMPORTANT* This is the name of the object/class that the walking enemy will move towards!
     [SerializeField] Vector3 pointDir; //Direction to move towards
+
+    [Header("----- Movement Speed -----")]
     [SerializeField] float speed; //Flat speed value
     [SerializeField] int turnSpeed; //How fast the enemy turns visually
+
+
+    [Header("----- Activation (Do Not Set Manually) -----")]
     [SerializeField] GameObject activatorObject; //What to watch for activity
-    [SerializeField] NavMeshAgent agent;
 
     public bool active;
 

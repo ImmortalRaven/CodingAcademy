@@ -15,16 +15,17 @@ using UnityEngine;
  */
 public class EnemyPatrol : MonoBehaviour
 {
-
+    [Header("----- Movement -----")]
     [SerializeField] CharacterController controller;
     [SerializeField] float moveSpeed;
     [SerializeField] int turnSpeed;
-    [SerializeField] float seeDist;
-    [SerializeField] LayerMask ignoreLayer;
     [SerializeField] int degreesToTurn;
+    [SerializeField] float seeDist;
+
+    [Header("----- Detection -----")]
     [SerializeField] LayerMask checkLayer;
 
-    [SerializeField] GameObject detectObject;
+    [Header("----- Activation (Should Not Be Manually Set) -----")]
     [SerializeField] GameObject activatorObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -91,8 +92,6 @@ public class EnemyPatrol : MonoBehaviour
                 transform.Rotate(0, (degreesToTurn - degreesTurned), 0);
                 degreesTurned = 0;
                 currState = (int)State.Walking;
-                //moveSpeed *= -1;
-                //myMovementVec = new Vector3(0, 0, moveSpeed);
                 myMovementVec = transform.forward * moveSpeed;
             }
         }

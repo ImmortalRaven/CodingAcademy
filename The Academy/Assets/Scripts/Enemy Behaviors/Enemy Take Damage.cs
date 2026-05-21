@@ -12,11 +12,12 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-
+    [Header("----- Setup -----")]
     [SerializeField] float currHealth;
     [SerializeField] GameObject key;
     [SerializeField] Renderer rend;
 
+    [Header("----- Hit Effects -----")]
     [SerializeField] GameObject spawnedObj;
     [SerializeField] int numToSpawnHit;
     [SerializeField] int numToSpawnDeath;

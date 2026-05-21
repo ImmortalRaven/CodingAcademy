@@ -16,21 +16,28 @@ using System.Collections;
  */
 public class playerControl : MonoBehaviour, IDamage
 {
+    [Header("----- Movement -----")]
     [SerializeField] CharacterController control;
     [SerializeField] int Speed;
+
+    [Header("----- Health -----")]
     [SerializeField] float HP;
+
+    [Header("----- Firing Location -----")]
+    [SerializeField] Transform shootPoint;
+    [SerializeField] Transform shootDir;
+
+    [Header("----- Primary Attack -----")]
     [SerializeField] int shootDMG;
     [SerializeField] int shootDist;
     [SerializeField] float shootRate;
-    [SerializeField] Transform shootPoint;
     [SerializeField] float shootSpeed;
-    [SerializeField] Transform shootDir;
     [SerializeField] GameObject shootProjectile;
     [SerializeField] AudioClip shootSound;
 
 
+    [Header("----- Charge Attack -----")]
     [SerializeField] float chargeShotDMGBase;
-    //[SerializeField] int chargeShotDMG;
     
     [SerializeField] int chargeShotDist;
 
