@@ -78,11 +78,14 @@ MonoBehaviour:
   shootDir: {fileID: 3586029772881291010}
   shootProjectile: {fileID: 5218392285457394489, guid: 0c5669a07e995fe428ca9f6043b37c6f, type: 3}
   shootSound: {fileID: 8300000, guid: 6c934b71582901b4a95ce8b12f735f0c, type: 3}
-  chargeShotDMG: 0
-  chargeShotDist: 0
-  chargeShotSize: 0
-  chargeBullet: {fileID: 0}
-  chargeBulletVisual: {fileID: 0}
+  chargeShotDMGBase: 3
+  chargeShotDist: 10
+  chargeShotSizeMin: 0.4
+  chargeShotSizeMax: 1.2
+  chargeShotSpeedMin: 0
+  chargeShotSpeedMax: 0
+  chargeBullet: {fileID: 5218392285457394489, guid: a4fe647b23075fc448c5650dbd35d189, type: 3}
+  chargeBulletVisual: {fileID: 5114022014725014856, guid: fc22837400dbd65439f393449134d41b, type: 3}
   shootRateOrig: 0
 --- !u!143 &7226284849824212409
 CharacterController:

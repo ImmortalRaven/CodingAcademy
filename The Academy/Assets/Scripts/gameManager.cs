@@ -77,12 +77,13 @@ public class gameManager : MonoBehaviour
     public void updateEnemyCount(int amount)
     {
         enemyCount += amount;
+        enemyCountText.text = enemyCount.ToString("F0");
         if (enemyCount <= 0)
         {
             if (regDoors != null)
             {
-                regDoors = GameObject.FindGameObjectWithTag("RegDoor");
-                regDoors.SetActive(false);
+                //regDoors = GameObject.FindGameObjectWithTag("RegDoor");
+                //regDoors.SetActive(false);
             }
         }
 
@@ -91,7 +92,6 @@ public class gameManager : MonoBehaviour
     {
         gameGoalCount += amount;
         gameGoalCountText.text = gameGoalCount.ToString("F0");
-        enemyCountText.text = enemyCount.ToString("F0");
         if (gameGoalCount <= 0)
         {
             // you win!
