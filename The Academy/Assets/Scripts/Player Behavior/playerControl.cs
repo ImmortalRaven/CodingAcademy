@@ -164,6 +164,7 @@ public class playerControl : MonoBehaviour, IDamage
                 isCharging = true;
                 chargeBulletVisual = Instantiate(chargeBulletVisual, shootPoint.position, shootPoint.rotation);
                 chargeTimer += Time.deltaTime;
+                gameManager.instance.ChargeShotBar.fillAmount = chargeShotSize / chargeshotsizemax;
                 chargeShotSize += Time.deltaTime;
                 
 
