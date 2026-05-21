@@ -28,8 +28,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     void Start()
     {
         colorOrig = rend.material.color;
-        //gameManager.instance.updateGameGoal(1);
-        //gameManager.instance.updateEnemyCount(1);
+        gameManager.instance.updateEnemyCount(1);
         allRenders = GetComponentsInChildren<Renderer>();
         allColors = new Color[allRenders.Length];
         for (int i = 0; i < allRenders.Length; i++)
@@ -58,6 +57,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         if(currHealth <= 0)
         {
             gameManager.instance.updateGameGoal(-1);
+            gameManager.instance.updateEnemyCount(-1);
             if (key != null)
             {
                 Instantiate(key, transform.position, transform.rotation);
