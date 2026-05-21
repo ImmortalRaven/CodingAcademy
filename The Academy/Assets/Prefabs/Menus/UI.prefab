@@ -981,6 +981,7 @@ MonoBehaviour:
   dmgPUTimer: {fileID: 8385164460523306103}
   speedPUTimer: {fileID: 7208246802221384969}
   fireratePUTimer: {fileID: 8611472923588215027}
+  ChargeShotBar: {fileID: 1334782351763620445}
   playerDamageScreen: {fileID: 5720940713906685127}
   playerFearFactor: {fileID: 1240624923687226624}
   gameGoalCountText: {fileID: 4721343302970881626}
