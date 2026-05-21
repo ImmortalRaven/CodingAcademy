@@ -18,6 +18,7 @@ public class gameManager : MonoBehaviour
     public GameObject playerDamageScreen;
     public GameObject playerFearFactor;
     public TMP_Text gameGoalCountText;
+    public TMP_Text enemyCountText;
 
     public bool isPaused;
     public GameObject player;
@@ -90,6 +91,7 @@ public class gameManager : MonoBehaviour
     {
         gameGoalCount += amount;
         gameGoalCountText.text = gameGoalCount.ToString("F0");
+        enemyCountText.text = enemyCount.ToString("F0");
         if (gameGoalCount <= 0)
         {
             // you win!
