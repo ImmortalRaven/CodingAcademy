@@ -10,6 +10,8 @@ public class damage : MonoBehaviour
     [SerializeField] float damageRate;
     public float bulletSpeed;
     [SerializeField] int bulletDestroyTime;
+    [SerializeField] int chargedBulletSpeed;
+    [SerializeField] int chargedBulletDestroyTime;
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] AudioClip playerHitSound;
     [SerializeField] AudioClip otherHitSound;
@@ -23,6 +25,7 @@ public class damage : MonoBehaviour
         if (type == damageType.bullet)
         {
             rb.linearVelocity = transform.forward * bulletSpeed;
+
             Destroy(gameObject, bulletDestroyTime);
         }
     }

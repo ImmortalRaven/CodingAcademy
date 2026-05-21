@@ -20,6 +20,7 @@ public class FearBody : MonoBehaviour
         if (other.gameObject == gameManager.instance.player)
         {
             gameManager.instance.playercontrol.ModifyMood(true);
+            gameManager.instance.playerFearFactor.SetActive(true);
         }
     }
 
@@ -27,11 +28,14 @@ public class FearBody : MonoBehaviour
     {
         if (other.gameObject == gameManager.instance.player)
         {
+            gameManager.instance.playercontrol.ModifyMood(false);
+            gameManager.instance.playerFearFactor.SetActive(false);
         }
     }
 
     private void OnDestroy()
     {
         gameManager.instance.playercontrol.ModifyMood(false);
+        gameManager.instance.playerFearFactor.SetActive(false);
     }
 }

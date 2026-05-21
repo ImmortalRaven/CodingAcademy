@@ -46,7 +46,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858351108255542424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 352e604909432a44dade16ff99a926af, type: 3}
   m_Name: 
@@ -78,6 +78,11 @@ MonoBehaviour:
   shootDir: {fileID: 3586029772881291010}
   shootProjectile: {fileID: 5218392285457394489, guid: 0c5669a07e995fe428ca9f6043b37c6f, type: 3}
   shootSound: {fileID: 8300000, guid: 6c934b71582901b4a95ce8b12f735f0c, type: 3}
+  chargeShotDMG: 0
+  chargeShotDist: 0
+  chargeShotSize: 0
+  chargeBullet: {fileID: 0}
+  chargeBulletVisual: {fileID: 0}
   shootRateOrig: 0
 --- !u!143 &7226284849824212409
 CharacterController:
