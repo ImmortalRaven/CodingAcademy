@@ -41,8 +41,4 @@ public class EnemySpawner : MonoBehaviour
             myActivator = other.gameObject;
         }
     }
-    //private void OnTriggerEnter(Collision collision)
-    //{
-        
-    //}
 }

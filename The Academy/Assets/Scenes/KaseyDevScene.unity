@@ -725,6 +725,7 @@ Transform:
   - {fileID: 2110011694}
   - {fileID: 862009845}
   - {fileID: 1020784259}
+  - {fileID: 2086258477}
   - {fileID: 1805337582}
   - {fileID: 1736785353}
   - {fileID: 614135081}
@@ -1758,6 +1759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Room 2B
       objectReference: {fileID: 0}
+    - target: {fileID: 6384820987744432496, guid: e399924a3b63538488b9c368ad0fb345, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2590,6 +2595,67 @@ Transform:
   - {fileID: 1214817308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1448455436
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 183244257}
+    m_Modifications:
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.7217703
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.89515
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931271101502750270, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_Name
+      value: EnemySpawner (Fear)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931271101502750270, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
 --- !u!1001 &1460372950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3358,7 +3424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1946075912
 Transform:
   m_ObjectHideFlags: 0
@@ -3591,6 +3657,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 192296697947019611, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
   m_PrefabInstance: {fileID: 1193600667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2086258477 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 584332570017382917, guid: 18c445312e9b97f49a9de4a5d2995032, type: 3}
+  m_PrefabInstance: {fileID: 1448455436}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2110011694 stripped
 Transform:
