@@ -185,7 +185,7 @@ public class playerControl : MonoBehaviour, IDamage
                     chargeShotSize = chargeShotSizeMin;
                 }
                 chargeTimer += Time.deltaTime;
-                //gameManager.instance.ChargeShotBar.fillAmount = chargeShotSize / chargeShotSizeMax;
+                gameManager.instance.ChargeShotBar.fillAmount = chargeShotSize / chargeShotSizeMax;
                 chargeShotSize += Time.deltaTime;
 
                 myChargeVisual.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
@@ -210,7 +210,7 @@ public class playerControl : MonoBehaviour, IDamage
                 shotBullet.GetComponent<damage>().damageAmount = chargeShotDMGBase * (chargeShotSize/chargeShotSizeMax);
                 shotBullet.GetComponent<TrailRenderer>().startWidth = chargeShotSize;
                 shotBullet.GetComponent<TrailRenderer>().endWidth = chargeShotSize*0.75f;
-
+                gameManager.instance.ChargeShotBar.fillAmount = 0;
                 Destroy(myChargeVisual);
                 myChargeVisual = null;
             }
