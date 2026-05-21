@@ -27,14 +27,21 @@ public class playerControl : MonoBehaviour, IDamage
     [SerializeField] Transform shootDir;
     [SerializeField] GameObject shootProjectile;
     [SerializeField] AudioClip shootSound;
-
+    [SerializeField] int chargeShotDMG;
+    [SerializeField] int chargeShotDist;
+    [SerializeField] float chargeShotSize;
+    [SerializeField] GameObject chargeBullet;
+    [SerializeField] GameObject chargeBulletVisual;
+    
 
     Vector3 moveDirection;
     int HPOrigin;
     float shootTimer;
     public float shootRateOrig;
+    float chargeTimer;
 
     bool fear;
+    bool isCharging;
 
     float expectedYPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,6 +62,7 @@ public class playerControl : MonoBehaviour, IDamage
         if (!fear)
         {
             Shoot();
+            ChargeShot();
         }
     }
 
@@ -143,5 +151,38 @@ public class playerControl : MonoBehaviour, IDamage
     void LockYPos()
     {
         transform.position = new Vector3(transform.position.x, expectedYPos, transform.position.z);
+    }
+
+    void ChargeShot()
+    {
+        bool mouseDown = Input.GetMouseButton(1);
+
+        if (!fear)
+        {
+            if (mouseDown)
+            {
+                isCharging = true;
+                chargeBulletVisual = Instantiate(chargeBulletVisual, shootPoint.position, shootPoint.rotation);
+                chargeTimer += Time.deltaTime;
+                chargeShotSize += Time.deltaTime;
+                
+
+                if (chargeShotSize > 1.2)
+                {
+                    chargeShotSize = 1.2f;
+                }
+            }
+
+            if(Input.GetMouseButtonUp(1))
+            {
+                isCharging = false;
+                Quaternion adjustedRot = shootDir.rotation;
+                adjustedRot.y -= 90;
+                chargeBullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+
+                chargeBullet.GetComponent<damage>().damageAmount = chargeShotDMG;
+            }
+        }
+
     }
 }
