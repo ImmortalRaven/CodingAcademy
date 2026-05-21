@@ -48,7 +48,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         
     }
 
-    public void takeDamage(int amount)
+    public void takeDamage(float amount)
     {
 
         

@@ -907,7 +907,7 @@ MonoBehaviour:
   playerDamageScreen: {fileID: 5720940713906685127}
   playerFearFactor: {fileID: 1240624923687226624}
   gameGoalCountText: {fileID: 4721343302970881626}
-  enemyCountText: {fileID: 0}
+  enemyCountText: {fileID: 306602800516155958}
   isPaused: 0
   player: {fileID: 858351108255542424, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
   playercontrol: {fileID: 645891925066940229, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}

@@ -27,7 +27,7 @@ public class InanimateTakeDamage : MonoBehaviour, IDamage
         
     }
 
-    public void takeDamage(int amount)
+    public void takeDamage(float amount)
     {
         currHealth -= amount;
         if(currHealth <= 0)
