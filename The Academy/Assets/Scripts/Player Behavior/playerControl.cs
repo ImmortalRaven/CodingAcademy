@@ -43,6 +43,8 @@ public class playerControl : MonoBehaviour, IDamage
     bool fear;
     bool isCharging;
 
+    GameObject myChargeVisual;
+
     float expectedYPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,6 +54,7 @@ public class playerControl : MonoBehaviour, IDamage
         HPOrigin = HP;
         fear = false;
         updatePlayerUI();
+        myChargeVisual = null;
     }
 
     // Update is called once per frame
@@ -162,9 +165,14 @@ public class playerControl : MonoBehaviour, IDamage
             if (mouseDown)
             {
                 isCharging = true;
-                chargeBulletVisual = Instantiate(chargeBulletVisual, shootPoint.position, shootPoint.rotation);
+                if (myChargeVisual == null)
+                {
+                    myChargeVisual = Instantiate(chargeBulletVisual, shootPoint.position, shootPoint.rotation);
+                }
                 chargeTimer += Time.deltaTime;
                 chargeShotSize += Time.deltaTime;
+
+               
                 
 
                 if (chargeShotSize > 1.2)
