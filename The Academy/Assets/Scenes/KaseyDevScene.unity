@@ -4642,6 +4642,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 645891925066940229, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
+      propertyPath: chargeBullet
+      value: 
+      objectReference: {fileID: 5218392285457394489, guid: a4fe647b23075fc448c5650dbd35d189, type: 3}
+    - target: {fileID: 645891925066940229, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
+      propertyPath: chargeShotDMG
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 645891925066940229, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
+      propertyPath: chargeShotDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 645891925066940229, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
+      propertyPath: chargeShotDMGBase
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 645891925066940229, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
+      propertyPath: chargeShotSizeMax
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 645891925066940229, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
+      propertyPath: chargeShotSizeMin
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 645891925066940229, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
+      propertyPath: chargeBulletVisual
+      value: 
+      objectReference: {fileID: 5114022014725014856, guid: fc22837400dbd65439f393449134d41b, type: 3}
     - target: {fileID: 858351108255542424, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
       propertyPath: m_Name
       value: Player

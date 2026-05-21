@@ -18,7 +18,7 @@ public class playerControl : MonoBehaviour, IDamage
 {
     [SerializeField] CharacterController control;
     [SerializeField] int Speed;
-    [SerializeField] int HP;
+    [SerializeField] float HP;
     [SerializeField] int shootDMG;
     [SerializeField] int shootDist;
     [SerializeField] float shootRate;
@@ -27,18 +27,33 @@ public class playerControl : MonoBehaviour, IDamage
     [SerializeField] Transform shootDir;
     [SerializeField] GameObject shootProjectile;
     [SerializeField] AudioClip shootSound;
-    [SerializeField] int chargeShotDMG;
+
+
+    [SerializeField] float chargeShotDMGBase;
+    //[SerializeField] int chargeShotDMG;
+    
     [SerializeField] int chargeShotDist;
-    [SerializeField] float chargeShotSize;
+
+
+    [SerializeField] float chargeShotSizeMin;
+    [SerializeField] float chargeShotSizeMax;
+
+    [SerializeField] float chargeShotSpeedMin;
+    [SerializeField] float chargeShotSpeedMax;
+
     [SerializeField] GameObject chargeBullet;
     [SerializeField] GameObject chargeBulletVisual;
+
+
     
 
     Vector3 moveDirection;
-    int HPOrigin;
+    float HPOrigin;
     float shootTimer;
     public float shootRateOrig;
     float chargeTimer;
+
+    float chargeShotSize;
 
     bool fear;
     bool isCharging;
@@ -100,7 +115,7 @@ public class playerControl : MonoBehaviour, IDamage
     }
 
     
-    public void takeDamage(int amount)
+    public void takeDamage(float amount)
     {
         HP -= amount;
         updatePlayerUI();
@@ -165,19 +180,22 @@ public class playerControl : MonoBehaviour, IDamage
             if (mouseDown)
             {
                 isCharging = true;
-                if (myChargeVisual == null)
+                if (myChargeVisual == null) //New charge shot is happening
                 {
                     myChargeVisual = Instantiate(chargeBulletVisual, shootPoint.position, shootPoint.rotation);
+                    chargeShotSize = chargeShotSizeMin;
                 }
                 chargeTimer += Time.deltaTime;
                 chargeShotSize += Time.deltaTime;
 
+                myChargeVisual.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
+                myChargeVisual.transform.position = shootPoint.transform.position;
                
                 
 
-                if (chargeShotSize > 1.2)
+                if (chargeShotSize > chargeShotSizeMax)
                 {
-                    chargeShotSize = 1.2f;
+                    chargeShotSize = chargeShotSizeMax;
                 }
             }
 
@@ -186,9 +204,15 @@ public class playerControl : MonoBehaviour, IDamage
                 isCharging = false;
                 Quaternion adjustedRot = shootDir.rotation;
                 adjustedRot.y -= 90;
-                chargeBullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+                GameObject shotBullet = Instantiate(chargeBullet, shootPoint.transform.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
 
-                chargeBullet.GetComponent<damage>().damageAmount = chargeShotDMG;
+                shotBullet.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
+                shotBullet.GetComponent<damage>().damageAmount = chargeShotDMGBase * (chargeShotSize/chargeShotSizeMax);
+                shotBullet.GetComponent<TrailRenderer>().startWidth = chargeShotSize;
+                shotBullet.GetComponent<TrailRenderer>().endWidth = chargeShotSize*0.75f;
+
+                Destroy(myChargeVisual);
+                myChargeVisual = null;
             }
         }
 
