@@ -14,6 +14,7 @@ public class gameManager : MonoBehaviour
     public Image dmgPUTimer;
     public Image speedPUTimer;
     public Image fireratePUTimer;
+    public Image ChargeShotBar;
 
     public GameObject playerDamageScreen;
     public GameObject playerFearFactor;

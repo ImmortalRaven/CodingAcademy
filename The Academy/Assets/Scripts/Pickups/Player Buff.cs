@@ -47,7 +47,7 @@ public class PlayerBuff : MonoBehaviour
         }
         if (buffType == "firerate")
         {
-            player.ModifyFireRate(-amount);
+            player.ModifyFireRate(amount);
             firerateActive = true;
         }
     }
@@ -68,7 +68,7 @@ public class PlayerBuff : MonoBehaviour
 
         if (buffType == "firerate")
         {
-            player.ModifyFireRate(amount);
+            player.ModifyFireRate(1 / amount);
             firerateActive = false;
         }
     }
