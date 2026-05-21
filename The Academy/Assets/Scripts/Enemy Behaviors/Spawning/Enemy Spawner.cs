@@ -7,12 +7,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject enemyToSpawn;
     [SerializeField] GameObject myActivator;
     [SerializeField] LayerMask layerToCheck;
+    [SerializeField] int amountToSpawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    
     bool spawned = false;
     void Start()
     {
-        gameManager.instance.updateGameGoal(1);
+        gameManager.instance.updateGameGoal(amountToSpawn);
         Collider[] colliderList = Physics.OverlapBox(transform.position, new Vector3(0.1f, 0.1f, 0.1f), transform.rotation, layerToCheck, QueryTriggerInteraction.Collide);
         for(int i = 0; i < colliderList.Length; i++)
         {
@@ -21,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
                 myActivator = colliderList[i].gameObject;
             }
         }
-
+        
     }
 
     // Update is called once per frame
