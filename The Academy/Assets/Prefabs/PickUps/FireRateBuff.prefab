@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickups
   type: 2
-  buffAmount: 0.1
-  buffDuration: 10
+  buffAmount: 2
+  buffDuration: 5
 --- !u!1 &4818173276571921982
 GameObject:
   m_ObjectHideFlags: 0
