@@ -49,3 +49,4 @@ MonoBehaviour:
   layerToCheck:
     serializedVersion: 2
     m_Bits: 256
+  amountToSpawn: 1
