@@ -136,9 +136,8 @@ public class playerControl : MonoBehaviour, IDamage
     }
     public void ModifyFireRate(float amount)
     {
-        shootRate += amount;
-        if (shootRate < 0.1f) shootRate = 0.1f;
-        if (shootRate > shootRateOrig) shootRate = shootRateOrig;
+        shootRate /= amount;
+        
     }
 
     public void ModifyMood(bool afraid)
@@ -186,7 +185,7 @@ public class playerControl : MonoBehaviour, IDamage
                     chargeShotSize = chargeShotSizeMin;
                 }
                 chargeTimer += Time.deltaTime;
-                gameManager.instance.ChargeShotBar.fillAmount = chargeShotSize / chargeshotsizemax;
+                //gameManager.instance.ChargeShotBar.fillAmount = chargeShotSize / chargeShotSizeMax;
                 chargeShotSize += Time.deltaTime;
 
                 myChargeVisual.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
