@@ -56,8 +56,8 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         MakeGuts(numToSpawnHit);
         if(currHealth <= 0)
         {
-            gameManager.instance.updateGameGoal(-1);
-            gameManager.instance.updateEnemyCount(-1);
+            //gameManager.instance.updateGameGoal(-1);
+            //gameManager.instance.updateEnemyCount(-1);
             if (key != null)
             {
                 Instantiate(key, transform.position, transform.rotation);
@@ -92,7 +92,8 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
     private void OnDestroy()
     {
-        //MakeGuts();
+        gameManager.instance.updateGameGoal(-1);
+        gameManager.instance.updateEnemyCount(-1);
     }
     public void MakeGuts(int amount)
     {
@@ -102,4 +103,6 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         }
         
     }
+
+    
 }
