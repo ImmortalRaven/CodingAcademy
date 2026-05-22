@@ -85,7 +85,7 @@ MonoBehaviour:
   chargeShotSpeedMin: 0
   chargeShotSpeedMax: 0
   chargeBullet: {fileID: 5218392285457394489, guid: a4fe647b23075fc448c5650dbd35d189, type: 3}
-  chargeBulletVisual: {fileID: 5114022014725014856, guid: fc22837400dbd65439f393449134d41b, type: 3}
+  chargeBulletVisual: {fileID: 0}
   shootRateOrig: 0
 --- !u!143 &7226284849824212409
 CharacterController:
