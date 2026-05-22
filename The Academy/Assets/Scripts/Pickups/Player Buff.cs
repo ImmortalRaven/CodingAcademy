@@ -13,6 +13,7 @@ public class PlayerBuff : MonoBehaviour
     public bool speedActive = false;
     public bool damageActive = false;
     public bool firerateActive = false;
+    public float currentDuration;
     // Update is called once per frame
     public void Initialize(playerControl playerControl, string type, float buffAmount, float buffDuration)
     {
@@ -26,6 +27,7 @@ public class PlayerBuff : MonoBehaviour
     void Update()
     {
         duration -= Time.deltaTime;
+        currentDuration = duration;
         if (duration <= 0 )
         {
             RemoveBuff();

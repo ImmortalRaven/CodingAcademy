@@ -238,6 +238,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
+--- !u!114 &78458277 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1334782351763620445, guid: 3ae5a22cddbcfa24e8a42a78bdd07779, type: 3}
+  m_PrefabInstance: {fileID: 819188326}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &125643869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -436,6 +447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1334782351763620445, guid: 3ae5a22cddbcfa24e8a42a78bdd07779, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3782488706079384248, guid: 3ae5a22cddbcfa24e8a42a78bdd07779, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -516,6 +531,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8933783783685838526, guid: 3ae5a22cddbcfa24e8a42a78bdd07779, type: 3}
+      propertyPath: ChargeShotBar
+      value: 
+      objectReference: {fileID: 78458277}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -632,11 +651,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2309451152258403892, guid: ddd7315aed81ddc428077e3fec4bad19, type: 3}
       propertyPath: buffAmount
-      value: 0.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2309451152258403892, guid: ddd7315aed81ddc428077e3fec4bad19, type: 3}
       propertyPath: buffDuration
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1489,7 +1508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2309451152258403892, guid: ddd7315aed81ddc428077e3fec4bad19, type: 3}
       propertyPath: buffAmount
-      value: 0.1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309451152258403892, guid: ddd7315aed81ddc428077e3fec4bad19, type: 3}
+      propertyPath: buffDuration
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

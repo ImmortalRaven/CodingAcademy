@@ -102,21 +102,26 @@ public class playerControl : MonoBehaviour, IDamage
     {
         bool mouseDown = Input.GetMouseButton(0);
 
-        if (!fear)
+        if (!isCharging)
         {
-            if (mouseDown && shootTimer >= shootRate)
-            {
-                shootTimer = 0;
-                Quaternion adjustedRot = shootDir.rotation;
-                adjustedRot.y -= 90;
-                GameObject bullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
-                bullet.GetComponent<damage>().damageAmount = shootDMG;
-                if (shootSound != null)
-                {
-                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
-                }
 
+            if (!fear)
+            {
+                if (mouseDown && shootTimer >= shootRate)
+                {
+                    shootTimer = 0;
+                    Quaternion adjustedRot = shootDir.rotation;
+                    adjustedRot.y -= 90;
+                    GameObject bullet = Instantiate(shootProjectile, shootPoint.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+                    bullet.GetComponent<damage>().damageAmount = shootDMG;
+                    if (shootSound != null)
+                    {
+                        AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                    }
+
+                }
             }
+
         }
 
     }
