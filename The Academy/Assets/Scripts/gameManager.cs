@@ -83,8 +83,8 @@ public class gameManager : MonoBehaviour
         {
             if (regDoors != null)
             {
-                //regDoors = GameObject.FindGameObjectWithTag("RegDoor");
-                //regDoors.SetActive(false);
+                regDoors = GameObject.FindGameObjectWithTag("RegDoor");
+                regDoors.SetActive(false);
             }
         }
 

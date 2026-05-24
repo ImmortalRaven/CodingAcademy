@@ -137,13 +137,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::walkTowardsPoint
   controller: {fileID: 5337648683007187086}
+  agent: {fileID: 0}
   target: {fileID: 0}
   targetName: Esick
   pointDir: {x: 0, y: 0, z: 0}
   speed: 6
   turnSpeed: 1
   activatorObject: {fileID: 0}
-  agent: {fileID: 0}
   active: 0
 --- !u!143 &5337648683007187086
 CharacterController:
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 6216869275365744882}
   - component: {fileID: 7796857777591259071}
   m_Layer: 0
-  m_Name: Enemy Bug
+  m_Name: Enemy Bug (90)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,15 +266,11 @@ MonoBehaviour:
   controller: {fileID: 8289176040678563131}
   moveSpeed: 4
   turnSpeed: 2
+  degreesToTurn: 90
   seeDist: 2
-  ignoreLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  degreesToTurn: 180
   checkLayer:
     serializedVersion: 2
     m_Bits: 128
-  detectObject: {fileID: 2677695598783052348, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
   activatorObject: {fileID: 0}
   currState: 0
   active: 0
