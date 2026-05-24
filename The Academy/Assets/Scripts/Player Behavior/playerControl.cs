@@ -50,6 +50,11 @@ public class playerControl : MonoBehaviour, IDamage
     [SerializeField] GameObject chargeBullet;
     [SerializeField] GameObject chargeBulletVisual;
 
+    [SerializeField] AudioClip[] chargeUpSounds;
+    [SerializeField] AudioClip[] chargeFireSounds;
+
+    [SerializeField] AudioSource chargeShotSoundHandler;
+
 
     
 
@@ -183,51 +188,57 @@ public class playerControl : MonoBehaviour, IDamage
 
     void ChargeShot()
     {
-        bool mouseDown = Input.GetMouseButton(1);
+  
+            bool mouseDown = Input.GetMouseButton(1);
 
-        if (!fear)
-        {
-            if (mouseDown)
+            if (!fear)
             {
-                isCharging = true;
-                if (myChargeVisual == null) //New charge shot is happening
+                if (mouseDown)
                 {
-                    myChargeVisual = Instantiate(chargeBulletVisual, shootPoint.position, shootPoint.rotation);
-                    chargeShotSize = chargeShotSizeMin;
+                    isCharging = true;
+                    if (myChargeVisual == null) //New charge shot is happening
+                    {
+                        myChargeVisual = Instantiate(chargeBulletVisual, shootPoint.position, shootPoint.rotation);
+                        chargeShotSize = chargeShotSizeMin;
+                        chargeShotSoundHandler.PlayOneShot(chargeUpSounds[Random.Range(0, chargeUpSounds.Length - 1)], 0.5f);
+                    }
+                    chargeTimer += Time.deltaTime;
+                    gameManager.instance.ChargeShotBar.fillAmount = chargeShotSize / chargeShotSizeMax;
+                    chargeShotSize += Time.deltaTime;
+
+                    myChargeVisual.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
+                    myChargeVisual.transform.position = shootPoint.transform.position;
+
+
+
+                    if (chargeShotSize > chargeShotSizeMax)
+                    {
+                        chargeShotSize = chargeShotSizeMax;
+                    }
                 }
-                chargeTimer += Time.deltaTime;
-                gameManager.instance.ChargeShotBar.fillAmount = chargeShotSize / chargeShotSizeMax;
-                chargeShotSize += Time.deltaTime;
 
-                myChargeVisual.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
-                myChargeVisual.transform.position = shootPoint.transform.position;
-               
-                
-
-                if (chargeShotSize > chargeShotSizeMax)
+                if (Input.GetMouseButtonUp(1))
                 {
-                    chargeShotSize = chargeShotSizeMax;
+                    isCharging = false;
+                    Quaternion adjustedRot = shootDir.rotation;
+                    adjustedRot.y -= 90;
+                    GameObject shotBullet = Instantiate(chargeBullet, shootPoint.transform.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
+
+                    shotBullet.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
+
+                    shotBullet.GetComponent<damage>().damageAmount = chargeShotDMGMax * (chargeShotSize / chargeShotSizeMax);
+                    shotBullet.GetComponent<damage>().bulletSpeed = (chargeShotSpeedMax * (chargeShotSize / chargeShotSizeMax));
+                    shotBullet.GetComponent<TrailRenderer>().startWidth = chargeShotSize;
+                    shotBullet.GetComponent<TrailRenderer>().endWidth = chargeShotSize * 0.75f;
+                    gameManager.instance.ChargeShotBar.fillAmount = 0;
+                    Destroy(myChargeVisual);
+                    myChargeVisual = null;
+
+                    chargeShotSoundHandler.Stop();
+
+                    chargeShotSoundHandler.PlayOneShot(chargeFireSounds[Random.Range(0, chargeFireSounds.Length - 1)], 0.5f);
                 }
             }
 
-            if(Input.GetMouseButtonUp(1))
-            {
-                isCharging = false;
-                Quaternion adjustedRot = shootDir.rotation;
-                adjustedRot.y -= 90;
-                GameObject shotBullet = Instantiate(chargeBullet, shootPoint.transform.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
-
-                shotBullet.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
-
-                shotBullet.GetComponent<damage>().damageAmount = chargeShotDMGMax * (chargeShotSize/chargeShotSizeMax);
-                shotBullet.GetComponent<damage>().bulletSpeed = (chargeShotSpeedMax * (chargeShotSize / chargeShotSizeMax));
-                shotBullet.GetComponent<TrailRenderer>().startWidth = chargeShotSize;
-                shotBullet.GetComponent<TrailRenderer>().endWidth = chargeShotSize*0.75f;
-                gameManager.instance.ChargeShotBar.fillAmount = 0;
-                Destroy(myChargeVisual);
-                myChargeVisual = null;
-            }
         }
-
-    }
 }

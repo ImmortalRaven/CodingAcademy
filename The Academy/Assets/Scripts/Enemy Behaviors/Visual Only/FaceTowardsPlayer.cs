@@ -16,8 +16,11 @@ public class FaceTowards : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pointDir = gameManager.instance.player.transform.position - gameObject.transform.position;
-        Quaternion rot = Quaternion.LookRotation(pointDir);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * turnSpeed);
+        if (gameManager.instance.player != null)
+        {
+            pointDir = gameManager.instance.player.transform.position - gameObject.transform.position;
+            Quaternion rot = Quaternion.LookRotation(pointDir);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * turnSpeed);
+        }
     }
 }
