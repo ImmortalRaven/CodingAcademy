@@ -37,7 +37,7 @@ public class playerControl : MonoBehaviour, IDamage
 
 
     [Header("----- Charge Attack -----")]
-    [SerializeField] float chargeShotDMGBase;
+    [SerializeField] float chargeShotDMGMax;
     
     [SerializeField] int chargeShotDist;
 
@@ -45,7 +45,6 @@ public class playerControl : MonoBehaviour, IDamage
     [SerializeField] float chargeShotSizeMin;
     [SerializeField] float chargeShotSizeMax;
 
-    [SerializeField] float chargeShotSpeedMin;
     [SerializeField] float chargeShotSpeedMax;
 
     [SerializeField] GameObject chargeBullet;
@@ -219,7 +218,9 @@ public class playerControl : MonoBehaviour, IDamage
                 GameObject shotBullet = Instantiate(chargeBullet, shootPoint.transform.position, Quaternion.Euler(0f, shootDir.eulerAngles.y + 90, 0f));
 
                 shotBullet.transform.localScale = new Vector3(chargeShotSize, chargeShotSize, chargeShotSize);
-                shotBullet.GetComponent<damage>().damageAmount = chargeShotDMGBase * (chargeShotSize/chargeShotSizeMax);
+
+                shotBullet.GetComponent<damage>().damageAmount = chargeShotDMGMax * (chargeShotSize/chargeShotSizeMax);
+                shotBullet.GetComponent<damage>().bulletSpeed = (chargeShotSpeedMax * (chargeShotSize / chargeShotSizeMax));
                 shotBullet.GetComponent<TrailRenderer>().startWidth = chargeShotSize;
                 shotBullet.GetComponent<TrailRenderer>().endWidth = chargeShotSize*0.75f;
                 gameManager.instance.ChargeShotBar.fillAmount = 0;
