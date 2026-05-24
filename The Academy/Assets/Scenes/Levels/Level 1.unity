@@ -2718,7 +2718,7 @@ PrefabInstance:
       objectReference: {fileID: 23800000, guid: 576c30a9b100a524f8aea8ba43b2e9bf, type: 2}
     - target: {fileID: 8720608502280154110, guid: 386cddeef3bce5645afacfa579646dff, type: 3}
       propertyPath: m_LayerMask.m_Bits
-      value: 65
+      value: 193
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10798,6 +10798,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 18752180957308418, guid: 667bb95f8375483469bd2060e485cb3b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 152260996072814044, guid: 667bb95f8375483469bd2060e485cb3b, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
