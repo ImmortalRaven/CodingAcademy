@@ -16,6 +16,7 @@ public class gameManager : MonoBehaviour
     public Image fireratePUTimer;
     public Image ChargeShotBar;
 
+    public GameObject checkPointPopup;
     public GameObject playerDamageScreen;
     public GameObject playerFearFactor;
     public TMP_Text gameGoalCountText;
@@ -26,6 +27,7 @@ public class gameManager : MonoBehaviour
     public playerControl playercontrol;
     public GameObject[] bossDoors;
     public GameObject regDoors;
+    public GameObject playerStartPos;
 
     int gameGoalCount;
     int enemyCount;
@@ -39,6 +41,7 @@ public class gameManager : MonoBehaviour
         timeScaleOrig = Time.timeScale;
         player = GameObject.FindWithTag("Player");
         playercontrol = player.GetComponent<playerControl>();
+        playerStartPos = GameObject.FindWithTag("playerStartPos");
     }
 
     // Update is called once per frame

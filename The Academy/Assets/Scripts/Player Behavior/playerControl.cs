@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 //HOW TO USE:
 /*
  * This is the main script that the player uses. It controls movement, health, and attacking with a projectile.
@@ -79,7 +80,7 @@ public class playerControl : MonoBehaviour, IDamage
         shootRateOrig = shootRate;
         HPOrigin = HP;
         fear = false;
-        updatePlayerUI();
+        changePlayerPos();
         myChargeVisual = null;
     }
 
@@ -241,4 +242,11 @@ public class playerControl : MonoBehaviour, IDamage
             }
 
         }
+    public void changePlayerPos()
+    {
+        control.transform.position = gameManager.instance.playerStartPos.transform.position;
+        Physics.SyncTransforms();
+        HP = HPOrigin;
+        updatePlayerUI();
+    }
 }
