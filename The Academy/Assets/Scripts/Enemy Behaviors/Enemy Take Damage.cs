@@ -93,8 +93,11 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
     private void OnDestroy()
     {
-        gameManager.instance.updateGameGoal(-1);
-        gameManager.instance.updateEnemyCount(-1);
+        if (gameManager.instance != null)
+        {
+            gameManager.instance.updateGameGoal(-1);
+            gameManager.instance.updateEnemyCount(-1);
+        }
     }
     public void MakeGuts(int amount)
     {
