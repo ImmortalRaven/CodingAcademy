@@ -77,16 +77,25 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
 
     IEnumerator flashRed()
     {
-        rend.material.color = Color.red;
+        if (rend != null)
+        {
+            rend.material.color = Color.red;
+        }
         for(int i = 0; i < allRenders.Length; i++)
         {
-            allRenders[i].material.color = Color.red;
+            if (allRenders[i] != null)
+            {
+                allRenders[i].material.color = Color.red;
+            }
         }
         yield return new WaitForSeconds(0.1f);
         rend.material.color = colorOrig;
         for(int i = 0; i < allRenders.Length; i++)
         {
-            allRenders[i].material.color = allColors[i];
+            if (allRenders[i] != null)
+            {
+                allRenders[i].material.color = allColors[i];
+            }
         }
         
     }

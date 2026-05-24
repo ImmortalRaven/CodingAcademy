@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1303773121542090092}
   - component: {fileID: 3412751156822352555}
   - component: {fileID: 6123867606518501978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoomActivate
-  m_TagString: Untagged
+  m_TagString: Activator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,4 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomEnterDetector
   expectedTag: Player
+  doors: {fileID: 0}
   roomActive: 0
