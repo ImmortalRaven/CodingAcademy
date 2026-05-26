@@ -142,6 +142,11 @@ public class playerControl : MonoBehaviour, IDamage
             gameManager.instance.YouLose();
         }
 
+        if (HP > HPOrigin)
+        {
+            HP = HPOrigin;
+        }
+
     }
     public void ModifySpeed(int amount)
     {
