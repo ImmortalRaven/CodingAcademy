@@ -27,4 +27,10 @@ public class buttonFunctions : MonoBehaviour
         gameManager.instance.playercontrol.changePlayerPos();
         gameManager.instance.stateUnpaused();
     }
+
+    public void loadLevel(int lvl)
+    {
+        SceneManager.LoadScene(lvl);
+        gameManager.instance.stateUnpaused();
+    }
 }
