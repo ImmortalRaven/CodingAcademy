@@ -18,7 +18,14 @@ public class RoomEnterDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(roomActive == true)
+        {
+            doors.SetActive(true);
+        }
+        if (gameManager.instance.getEnemyCount() == 0)
+        {
+            doors.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,10 +38,9 @@ public class RoomEnterDetector : MonoBehaviour
         if(other.tag == expectedTag)
         {
             roomActive = true;
-            if (gameManager.instance.getEnemyCount() > 0)
-            {
-                doors.SetActive(true);
-            }
+            
+           
+
         }
     }
 
