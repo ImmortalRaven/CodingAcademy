@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Data;
+using UnityEngine.UI;
 
 
 
@@ -21,14 +22,17 @@ public class PlayerBuff : MonoBehaviour
         buffType = type;
         amount = buffAmount;
         duration = buffDuration;
+        currentDuration = duration;
 
         ApplyBuff();
     }
     void Update()
     {
-        duration -= Time.deltaTime;
-        currentDuration = duration;
-        if (duration <= 0)
+        
+        currentDuration -= Time.deltaTime;
+        
+        updateplayerBUI();
+        if (currentDuration <= 0)
         {
             RemoveBuff();
             Destroy(this);
@@ -77,31 +81,36 @@ public class PlayerBuff : MonoBehaviour
 
     public void updateplayerBUI()
     {
+       
         if (speedActive == true)
         {
+            gameManager.instance.speedBG.SetActive(true);
+
             gameManager.instance.speedPUTimer.fillAmount = currentDuration / duration;
             if (currentDuration <= 0)
             {
                 speedActive = false;
-                currentDuration = duration;
+                gameManager.instance.speedBG.SetActive(false);
             }
         }
         else if (damageActive == true)
         {
+            gameManager.instance.dmgBG.SetActive(true);
             gameManager.instance.dmgPUTimer.fillAmount = currentDuration / duration;
             if (currentDuration <= 0)
             {
                 damageActive = false;
-                currentDuration = duration;
+                gameManager.instance.dmgBG.SetActive(false);
             }
         }
         else if (firerateActive == true)
         {
+            gameManager.instance.firerateBG.SetActive(true);
             gameManager.instance.fireratePUTimer.fillAmount = currentDuration / duration;
             if (currentDuration <= 0)
             {
                 firerateActive = false;
-                currentDuration = duration;
+                gameManager.instance.firerateBG.SetActive(false);
             }
         }
     }
