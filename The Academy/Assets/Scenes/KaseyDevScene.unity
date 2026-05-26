@@ -199,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1371180435429802421, guid: 93592adda165ac646a95792c6d2753e6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8862428080567913733, guid: 93592adda165ac646a95792c6d2753e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3557,6 +3557,8 @@ MonoBehaviour:
   currHealth: 50
   key: {fileID: 0}
   rend: {fileID: 1946075913}
+  spawnObj: {fileID: 0}
+  numToSpawnStart: 0
   spawnedObj: {fileID: 608757744892499585, guid: 637393fc33023f74184ed0cec569f9b8, type: 3}
   numToSpawnHit: 20
   numToSpawnDeath: 200

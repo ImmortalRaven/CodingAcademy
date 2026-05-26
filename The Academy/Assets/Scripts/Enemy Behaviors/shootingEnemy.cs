@@ -23,6 +23,9 @@ public class shootingEnemy : MonoBehaviour
     [SerializeField] List<GunStats> gunList = new List<GunStats>();
     [SerializeField] GameObject gunModel;
     [SerializeField] GunStats startingGun;
+    [SerializeField] LineRenderer laserSight;
+    [SerializeField] int laserSightRange;
+
 
     [Header("----- Activation (Do Not Set Manually) -----")]
     [SerializeField] GameObject activatorObject;
@@ -34,12 +37,12 @@ public class shootingEnemy : MonoBehaviour
     int gunListPosition = 0;
     float shootTimer;
     float angleToPlayer;
-   
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(startingGun != null)
+        if (startingGun != null)
         {
             GetGunStats(startingGun);
         }
@@ -53,6 +56,10 @@ public class shootingEnemy : MonoBehaviour
         {
             shootTimer += Time.deltaTime;
 
+            if (laserSight != null)
+            {
+                LaserPointer();
+            }
             if (PlayerSeen())
             {
 
@@ -95,7 +102,7 @@ public class shootingEnemy : MonoBehaviour
             myBullet.GetComponent<damage>().damageAmount = gunList[gunListPosition].shootDamage;
             myBullet.GetComponent<damage>().bulletSpeed = gunList[gunListPosition].bulletSpeed;
 
-            myBullet.transform.Rotate( Random.Range(-(gunList[gunListPosition].spreadVert), gunList[gunListPosition].spreadVert), Random.Range(-(gunList[gunListPosition].spreadHoriz), gunList[gunListPosition].spreadHoriz), 0);
+            myBullet.transform.Rotate(Random.Range(-(gunList[gunListPosition].spreadVert), gunList[gunListPosition].spreadVert), Random.Range(-(gunList[gunListPosition].spreadHoriz), gunList[gunListPosition].spreadHoriz), 0);
         }
         AudioSource.PlayClipAtPoint(shootSound, transform.position);
     }
@@ -140,6 +147,21 @@ public class shootingEnemy : MonoBehaviour
         else
         {
             active = true;
+        }
+    }
+
+    void LaserPointer()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(gunPivot.position, gunPivot.forward, out hit, laserSightRange))
+        {
+            laserSight.SetPosition(0, gunPivot.position);
+            laserSight.SetPosition(1, hit.point);
+        }
+        else
+        {
+            laserSight.SetPosition(0, gunPivot.position);
+            laserSight.SetPosition(1, gunPivot.position + gunPivot.forward * laserSightRange);
         }
     }
 }
