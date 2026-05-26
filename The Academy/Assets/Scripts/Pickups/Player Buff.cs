@@ -28,7 +28,7 @@ public class PlayerBuff : MonoBehaviour
     {
         duration -= Time.deltaTime;
         currentDuration = duration;
-        if (duration <= 0 )
+        if (duration <= 0)
         {
             RemoveBuff();
             Destroy(this);
@@ -40,7 +40,7 @@ public class PlayerBuff : MonoBehaviour
         {
             player.ModifySpeed((int)amount);
             speedActive = true;
-}
+        }
 
         if (buffType == "damage")
         {
@@ -72,6 +72,37 @@ public class PlayerBuff : MonoBehaviour
         {
             player.ModifyFireRate(1 / amount);
             firerateActive = false;
+        }
+    }
+
+    public void updateplayerBUI()
+    {
+        if (speedActive == true)
+        {
+            gameManager.instance.speedPUTimer.fillAmount = currentDuration / duration;
+            if (currentDuration <= 0)
+            {
+                speedActive = false;
+                currentDuration = duration;
+            }
+        }
+        else if (damageActive == true)
+        {
+            gameManager.instance.dmgPUTimer.fillAmount = currentDuration / duration;
+            if (currentDuration <= 0)
+            {
+                damageActive = false;
+                currentDuration = duration;
+            }
+        }
+        else if (firerateActive == true)
+        {
+            gameManager.instance.fireratePUTimer.fillAmount = currentDuration / duration;
+            if (currentDuration <= 0)
+            {
+                firerateActive = false;
+                currentDuration = duration;
+            }
         }
     }
 }
