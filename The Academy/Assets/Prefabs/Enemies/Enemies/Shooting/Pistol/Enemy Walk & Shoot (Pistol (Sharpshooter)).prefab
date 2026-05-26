@@ -526,6 +526,8 @@ MonoBehaviour:
   currHealth: 24
   key: {fileID: 0}
   rend: {fileID: 8297131518130086484}
+  spawnObj: {fileID: 608757744892499585, guid: 81cf56446ad40fb42a455fd11edc2dd2, type: 3}
+  numToSpawnStart: 20
   spawnedObj: {fileID: 608757744892499585, guid: 637393fc33023f74184ed0cec569f9b8, type: 3}
   numToSpawnHit: 5
   numToSpawnDeath: 20

@@ -347,6 +347,8 @@ MonoBehaviour:
   currHealth: 3
   key: {fileID: 0}
   rend: {fileID: 1967506567105525884}
+  spawnObj: {fileID: 608757744892499585, guid: 81cf56446ad40fb42a455fd11edc2dd2, type: 3}
+  numToSpawnStart: 20
   spawnedObj: {fileID: 608757744892499585, guid: 637393fc33023f74184ed0cec569f9b8, type: 3}
   numToSpawnHit: 5
   numToSpawnDeath: 20
@@ -363,13 +365,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::walkTowardsPoint
   controller: {fileID: 2007774507153046437}
+  agent: {fileID: 3039947227509193924}
   target: {fileID: 0}
   targetName: Player
   pointDir: {x: 0, y: 0, z: 0}
   speed: 1
   turnSpeed: 8
   activatorObject: {fileID: 0}
-  agent: {fileID: 3039947227509193924}
   active: 0
 --- !u!195 &3039947227509193924
 NavMeshAgent:
@@ -407,12 +409,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::shootingEnemy
   shootPosition: {fileID: 3636221042709784615}
   gunPivot: {fileID: 3636221042709784615}
-  shootSound: {fileID: 8300000, guid: 0b3399510f26a9d4cacbfd547562143b, type: 3}
-  activatorObject: {fileID: 0}
   FoV: 45
+  shootSound: {fileID: 8300000, guid: 0b3399510f26a9d4cacbfd547562143b, type: 3}
   gunList: []
   gunModel: {fileID: 8800950539399264079}
   startingGun: {fileID: 11400000, guid: 53d64e21837a5ee42820f932dc7139b8, type: 2}
+  activatorObject: {fileID: 0}
   active: 0
 --- !u!143 &2007774507153046437
 CharacterController:

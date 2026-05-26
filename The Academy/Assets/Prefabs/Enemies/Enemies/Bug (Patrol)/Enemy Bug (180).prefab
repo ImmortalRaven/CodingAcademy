@@ -137,13 +137,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::walkTowardsPoint
   controller: {fileID: 5337648683007187086}
+  agent: {fileID: 0}
   target: {fileID: 0}
   targetName: Esick
   pointDir: {x: 0, y: 0, z: 0}
   speed: 6
   turnSpeed: 1
   activatorObject: {fileID: 0}
-  agent: {fileID: 0}
   active: 0
 --- !u!143 &5337648683007187086
 CharacterController:
@@ -248,6 +248,8 @@ MonoBehaviour:
   currHealth: 2
   key: {fileID: 0}
   rend: {fileID: 804620978856539153}
+  spawnObj: {fileID: 608757744892499585, guid: 81cf56446ad40fb42a455fd11edc2dd2, type: 3}
+  numToSpawnStart: 20
   spawnedObj: {fileID: 608757744892499585, guid: 7dbc738634133fe4896ee7e3b4378f07, type: 3}
   numToSpawnHit: 3
   numToSpawnDeath: 12
@@ -266,15 +268,11 @@ MonoBehaviour:
   controller: {fileID: 8289176040678563131}
   moveSpeed: 4
   turnSpeed: 2
-  seeDist: 2
-  ignoreLayer:
-    serializedVersion: 2
-    m_Bits: 0
   degreesToTurn: 180
+  seeDist: 2
   checkLayer:
     serializedVersion: 2
     m_Bits: 128
-  detectObject: {fileID: 2677695598783052348, guid: 9ced9a57373ccee48b246a9848f7486f, type: 3}
   activatorObject: {fileID: 0}
   currState: 0
   active: 0

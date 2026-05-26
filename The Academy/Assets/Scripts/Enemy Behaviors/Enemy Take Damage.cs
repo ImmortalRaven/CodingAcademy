@@ -16,6 +16,11 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     [SerializeField] float currHealth;
     [SerializeField] GameObject key;
     [SerializeField] Renderer rend;
+   
+
+    [Header("----- Spawn Effects -----")]
+    [SerializeField] GameObject spawnObj;
+    [SerializeField] int numToSpawnStart;
 
     [Header("----- Hit Effects -----")]
     [SerializeField] GameObject spawnedObj;
@@ -28,6 +33,9 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
     Color[] allColors;
     void Start()
     {
+
+
+        MakeGuts(numToSpawnStart, spawnObj);
         colorOrig = rend.material.color;
         gameManager.instance.updateEnemyCount(1);
         allRenders = GetComponentsInChildren<Renderer>();
@@ -117,5 +125,14 @@ public class EnemyTakeDamage : MonoBehaviour, IDamage
         
     }
 
-    
+    public void MakeGuts(int amount, GameObject gutball)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Instantiate(gutball, transform.position, transform.rotation);
+        }
+
+    }
+
+
 }

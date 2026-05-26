@@ -442,13 +442,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::walkTowardsPoint
   controller: {fileID: 2952350200417982552}
+  agent: {fileID: 6197485050232514405}
   target: {fileID: 0}
   targetName: Player
   pointDir: {x: 0, y: 0, z: 0}
   speed: 3
   turnSpeed: 20
   activatorObject: {fileID: 0}
-  agent: {fileID: 6197485050232514405}
   active: 0
 --- !u!195 &6197485050232514405
 NavMeshAgent:
@@ -487,6 +487,8 @@ MonoBehaviour:
   currHealth: 5
   key: {fileID: 0}
   rend: {fileID: 2926811493459438075}
+  spawnObj: {fileID: 608757744892499585, guid: 81cf56446ad40fb42a455fd11edc2dd2, type: 3}
+  numToSpawnStart: 20
   spawnedObj: {fileID: 608757744892499585, guid: 637393fc33023f74184ed0cec569f9b8, type: 3}
   numToSpawnHit: 4
   numToSpawnDeath: 20
