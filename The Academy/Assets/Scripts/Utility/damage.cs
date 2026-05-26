@@ -69,12 +69,11 @@ public class damage : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.isTrigger)
-        {
+        if(other.isTrigger) 
             return;
-        }
+
         IDamage dmg = other.GetComponent<IDamage>();
-        if(dmg != null && type == damageType.DOT && !isDamaging)
+        if(dmg == null && type == damageType.DOT && !isDamaging)
         {
             StartCoroutine(damageOther(dmg));
         }

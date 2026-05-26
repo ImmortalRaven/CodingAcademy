@@ -196,6 +196,8 @@ public class playerControl : MonoBehaviour, IDamage
     {
   
             bool mouseDown = Input.GetMouseButton(1);
+            isCharging = false;
+
 
             if (!fear)
             {
