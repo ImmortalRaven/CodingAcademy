@@ -220,6 +220,8 @@ public class playerControl : MonoBehaviour, IDamage
     {
   
             bool mouseDown = Input.GetMouseButton(1);
+            
+
 
             if (!fear)
             {
