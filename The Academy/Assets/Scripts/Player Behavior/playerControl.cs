@@ -173,6 +173,16 @@ public class playerControl : MonoBehaviour, IDamage
     public void ModifyMood(bool afraid)
     {
         fear = afraid;
+        if(afraid == true)
+        {
+            if(myChargeVisual != null)
+            {
+                Destroy(myChargeVisual);
+                myChargeVisual = null;
+                gameManager.instance.ChargeShotBar.fillAmount = 0;
+                isCharging = false;
+            }
+        }
         StartCoroutine(FearScreen());
 
     }
