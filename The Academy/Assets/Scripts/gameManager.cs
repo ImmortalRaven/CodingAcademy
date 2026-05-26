@@ -14,10 +14,14 @@ public class gameManager : MonoBehaviour
     public Image dmgPUTimer;
     public Image speedPUTimer;
     public Image fireratePUTimer;
+    public GameObject dmgBG;
+    public GameObject speedBG;
+    public GameObject firerateBG;
     public Image ChargeShotBar;
 
     public GameObject checkPointPopup;
     public GameObject playerDamageScreen;
+    public GameObject playerHealScreen;
     public GameObject playerFearFactor;
     public TMP_Text gameGoalCountText;
     public TMP_Text enemyCountText;
