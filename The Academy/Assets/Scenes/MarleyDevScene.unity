@@ -1806,6 +1806,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649205296}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &660200950
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2695498559313580346}
+    m_Modifications:
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247689596984517059, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+      propertyPath: m_Name
+      value: Ceiling Light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b8655642c464284197d74558ea4264c, type: 3}
 --- !u!1 &665625867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,6 +2043,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693527684}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &694442909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3544682349163019369, guid: 0b8655642c464284197d74558ea4264c, type: 3}
+  m_PrefabInstance: {fileID: 660200950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &707789448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4854,7 +4916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1237136347099696838, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1237136347099696838, guid: 759b5d24099b48d4d850eb72d0cae9dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6388,6 +6450,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7484445183025462694, guid: 58f2c4e0dbbbecf4aa74c493477ca525, type: 3}
       insertIndex: 1
+      addedObject: {fileID: 694442909}
+    - targetCorrespondingSourceObject: {fileID: 7484445183025462694, guid: 58f2c4e0dbbbecf4aa74c493477ca525, type: 3}
+      insertIndex: 2
       addedObject: {fileID: 99394776216400298}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58f2c4e0dbbbecf4aa74c493477ca525, type: 3}
