@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/KaseyDevScene.unity
     guid: a26628afcba9d344c83e92f130377be5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Level 1.unity
     guid: 54509a37626ffed449e24c37c0c4e7fc
   - enabled: 1
